@@ -80,6 +80,12 @@ const timelineData = [
         title: 'Aushilfsjobs an einer Takstelle & Kfz-Werkstatt',
         company: 'Amman, Jordanien',
         icon: 'icon-gaspump'
+      },      
+      {
+        date: 'Aug. 2021',
+        title: 'Fundraising',
+        company: 'talk2move Fundraising GmbH',
+        icon: 'icon-chat1'
       },
       {
         date: 'Dez. 2023',
