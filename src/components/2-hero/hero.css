@@ -1,0 +1,111 @@
+/* ==============================
+    table of Contents 
+=================================
+
+1. left section
+2. right section (animation)  
+*/
+
+
+section.hero {
+    margin-top: 3rem;
+}
+
+/* ==================================
+    1. left section
+=====================================
+*/
+/*place verfiied-icon below image */
+section.hero .parent-avatar.flex {
+    align-items: end;
+    gap: 0.4rem;
+    min-height: 88px;
+    /*bei Laden des Fotos sollte der willkommenstext nicht (ganz kurz) im foto-bereich erscheinen*/
+}
+
+section.hero .left-section {
+    flex-grow: 1;
+}
+
+section.hero .icon-verified {
+    color: var(--blue);
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+}
+
+section.hero .avatar {
+    width: 88px;
+    border-radius: 50%;
+    border: 1px solid darkorange;
+    padding: 1px;
+    box-shadow: 2px 2px 40px rgba(196, 194, 194, 0.334) inset;
+}
+
+section.hero h1.title {
+    font-size: 3.5rem;
+    line-height: 3.3rem;
+    margin: 24px 0;
+    color: var(--title);
+}
+
+section.hero p.sub-title {
+    color: var(--subtitle);
+    font-size: 1.2rem;
+    line-height: 1.65rem;
+    margin-bottom: 32px;
+}
+
+section.hero .all-icons,
+.all-icons a {
+    font-size: 1.6rem;
+    gap: 1.7rem;
+    color: var(--subtitle);
+}
+
+
+
+section.hero .all-icons .icon:hover {
+    font-size: 1.5rem;
+    transition: 0.3s;
+    cursor: pointer;
+    color: var(--icon-hover);
+
+}
+
+/* ==================================
+    2. right section (animation) 
+=====================================
+*/
+section.hero .animation {
+    width: 100%;
+    translate: 10px 55px;
+
+}
+
+@media (max-width: 1250px) {
+    section.hero .animation {
+        display: none;
+    }
+
+    section.hero .avatar {
+        margin-top: 10rem;
+    }
+
+}
+
+@media (max-width: 800px) {
+    section.hero h1.title {
+        line-height: 3.5rem;
+    }
+
+    section.hero .avatar {
+        margin-top: 5rem;
+    }
+}
+
+@media (max-width : 600px) {
+    section.hero .avatar {
+        margin-top: 4rem;
+    }
+
+}

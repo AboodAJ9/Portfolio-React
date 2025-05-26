@@ -1,0 +1,39 @@
+
+
+
+section.skill-sec .icon-lamp{
+    color: var(--subtitle); 
+    margin-right: 2rem; 
+    font-size: 2rem; 
+
+}
+
+
+section.skill-sec .title{
+    font-size: 2.1rem; 
+    color: var(--title); 
+    margin-bottom: 1rem; 
+
+}
+
+
+.icons-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.tech-icon {
+  width: 80px;
+  height: 80px;
+  object-fit: contain;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.tech-icon:hover {
+  transform: scale(1.1);
+}

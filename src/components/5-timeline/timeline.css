@@ -1,0 +1,149 @@
+
+section.time-sec .icon-calendar{
+    color: var(--subtitle); 
+    margin-right: 2rem; 
+    font-size: 2rem; 
+
+}
+
+
+section.time-sec .title{
+    font-size: 2.1rem; 
+    color: var(--title); 
+    margin-bottom: 1rem; 
+
+}
+section.time-sec .group-title button{
+    background-color: rgba(36, 37, 46, 1);
+    width: 15rem; 
+    padding: 0.75rem 0;  
+    border-radius: 25px;
+    text-align: center;
+    color: var(--title); 
+    font-size: 1.25rem;
+    text-transform: capitalize;
+    opacity: 0.6; 
+    transition: 0.3s; 
+
+}
+.light section.time-sec .group-title button{
+    color: white; 
+
+}
+.group-title{
+  /* background-color: rgba(36, 37, 46, 1); */
+  padding-bottom: 2rem;
+  color: var(--subtitle); 
+  justify-content: center;
+  margin-bottom: -10px; 
+}
+.timeline-container {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 2px;
+}
+
+.timeline-line {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    #4a5568 10%,
+    #4a5568 90%,
+    transparent 100%
+  );
+  z-index: 0; }
+
+.timeline-item {
+  display: flex;
+  width: 100%;
+  margin: 60px 0;
+  position: relative;
+}
+
+.timeline-item.left .timeline-content {
+  margin-right: auto;
+  text-align: right;
+}
+
+.timeline-item.right .timeline-content {
+  margin-left: auto;
+  text-align: left;
+}
+
+.timeline-icon-container {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  top: 50%;
+  z-index:3;
+}
+
+.timeline-icon-circle {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background:rgba(25, 118, 210, 0.85);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(66, 153, 225, 0.3);
+}
+
+.timeline-icon {
+  font-size: 24px;
+}
+
+.timeline-content {
+  z-index:2; 
+  width: 45%;
+  padding: 25px;
+  background: #2d3748;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+
+
+
+/*_____________________________________*/
+@media (max-width: 768px) {
+  .timeline-line {
+    left: 2px;
+  }
+
+  .timeline-item {
+    flex-direction: column;
+    margin: 40px 0;
+  }
+
+  .timeline-item.left .timeline-content,
+  .timeline-item.right .timeline-content {
+    width: 100%;
+    margin-left: 0;
+    text-align: left;
+  }
+
+  .timeline-icon-container {
+
+    left: 0px;
+    top: -30px;
+    transform: none;
+  }
+
+  .timeline-content {
+    margin-left: 20px !important;
+  }
+
+  .timeline-icon-circle {
+    margin-top: 1rem;
+    width: 40px;
+    height: 40px;
+
+}
+}
