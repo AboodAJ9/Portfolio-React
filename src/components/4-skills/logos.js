@@ -21,5 +21,6 @@ export const logos = [
     '/techIcons/scrum_logo.png',
     '/techIcons/figma_logo.png',
     '/techIcons/xd_logo.png',
-    '/techIcons/blender_logo.png'
+    '/techIcons/blender_logo.png',
+    '/techIcons/hibernate_logo.png'
 ]
