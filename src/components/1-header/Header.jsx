@@ -50,11 +50,11 @@ const Header = () => {
                                 setShowModal(false)
                             }} />
                         </li>
-                        <li><a href="">About</a></li>
-                        <li><a href="">Skills</a></li>
-                        <li><a href="">Projects</a></li>
-                        <li><a href="">Speaking</a></li>
-                        <li><a href="">Contact</a></li>
+                            <li><a href="#up">Home</a></li>
+                            <li><a href="#projects">Projekte</a></li>
+                            <li><a href="#skills">Skills</a></li>
+                            <li><a href="#timeline">Lebenslauf</a></li>
+                            <li><a href="#contact">Kontakt</a></li>
                     </ul>
                 </div>
             )}
