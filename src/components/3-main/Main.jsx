@@ -13,9 +13,9 @@ const Main = () => {
     const buttons = [t("all"), "Spring-Boot", "react/Next", "vue.js", "java", "python"]
 
     const handleClick = (index) => {
-        console.log("hey bro" + index)
         setActive(index);
         const selectedCategory = buttons[index].toLowerCase();
+        console.log("hey joo" + t("all") + selectedCategory)
         const filtered = selectedCategory === t("all")
             ? myProjects
             : myProjects.filter(project =>
