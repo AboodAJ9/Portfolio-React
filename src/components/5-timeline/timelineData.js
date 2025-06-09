@@ -1,47 +1,47 @@
 const timelineData = [
   {
-    title: 'Schule, Studium',
+    title: "school-study",
 
     items: [
 
       {
         date: '2012-2013',
-        title: 'Mittelschule ',
-        company: 'Damaskus, Syrien',
-        description: '(vergleichbar mit Gesamtschule, 7. Klasse)',
+        title: 'sec-school',
+        company: 'damascus',
+        description: '7grade-desc',
         icon: 'icon-study'
       },
       {
         date: '2013-2014',
-        title: 'Mittelschule',
-        company: 'al Salt, Jordanien',
-        description: '(vergleichbar mit Gesamtschule 8. und 9. Klasse)',
+        title: 'sec-school',
+        company: 'salt',
+        description: '8-9-grade-desc',
         icon: 'icon-study'
       },
       {
         date: '2014-2015',
-        title: 'Mittelschule',
-        company: 'Istanbul, Türkei',
-        description: '(vergleichbar mit Gesamtschule 10. Klasse)',
+        title: 'sec-school',
+        company: 'turkey',
+        description: '10-grade-desc',
         icon: 'icon-study'
       },
       {
         date: '2016-2020',
-        title: 'Gymnasium',
+        title: 'high-sec',
         company: 'Landschulheim Steinmühle, Marburg',
-        description: 'Durchschnitt: 1.1',
+        description: 'average',
         icon: 'icon-study'
       },
       {
         date: 'Okt.2021 - Heute',
-        title: 'Studium-Medieninformatik',
+        title: 'uni',
         company: 'Hochschule RheinMain',
         icon: 'icon-institution'
       }
     ]
   },
   {
-    title: "Praktika",
+    title: "internships",
     items: [
       {
         date: 'Aug. 2016',
@@ -59,37 +59,37 @@ const timelineData = [
       },
       {
         date: 'Aug. 2020',
-        title: 'Freiwilliges soziales Jahr',
-        company: 'Uniklinikum Gießen und Marburg',
-        description: 'Pflegerische Tätigkeiten auf Station 137 und 227',
+        title: 'fsj',
+        company: 'hospital-name',
+        description: 'fsj-desc',
         icon: 'icon-aid-kit'
       }
     ]
   },
   {
-    title: "Nebentätigkeiten",
+    title: "sec-activities",
     items: [
       {
         date: '2012-2014',
-        title: 'Aushilfsjobs in Supermärkten',
-        company: 'Al Salt, Jordanien & Damaskus, Syrien',
+        title: 'supermarkt',
+        company: 'salt-damas',
         icon: 'icon-shipping'
       },
       {
         date: '2014-2015',
         title: 'Aushilfsjobs an einer Takstelle & Kfz-Werkstatt',
-        company: 'Amman, Jordanien',
+        company: 'amman',
         icon: 'icon-gaspump'
       },      
       {
         date: 'Aug. 2021',
-        title: 'Fundraising',
+        title: 'fundraising',
         company: 'talk2move Fundraising GmbH',
         icon: 'icon-chat1'
       },
       {
         date: 'Dez. 2023',
-        title: 'Führerschein',
+        title: 'driving-lic',
         company: 'LightDrive, Wiesbaden',
         icon: 'icon-profile'
       }

@@ -3,18 +3,20 @@ import './main.css';
 import { useState } from 'react';
 import { myProjects } from './myProjects';
 import { AnimatePresence, motion, transform } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
-const buttons = ["All Projects", "Spring-Boot", "react/Next", "vue.js", "java", "python"]
 const Main = () => {
-
+     
+    const { t, i18n } = useTranslation();    
     const [activeButton, setActive] = useState(0);
     const [projArr, setProjArr] = useState(myProjects);
+    const buttons = [t("all"), "Spring-Boot", "react/Next", "vue.js", "java", "python"]
 
     const handleClick = (index) => {
         console.log("hey bro" + index)
         setActive(index);
         const selectedCategory = buttons[index].toLowerCase();
-        const filtered = selectedCategory === "all projects"
+        const filtered = selectedCategory === t("all")
             ? myProjects
             : myProjects.filter(project =>
                 project.categories.some(cat =>
@@ -58,15 +60,15 @@ const Main = () => {
                                 key={item.imgPath} className=' card'>
                                 <img width={266} src={item.imgPath} alt="" />
                                 <div style={{ width: "266px" }} className='box'>
-                                    <h1 className='title'>{item.projectTitle}</h1>
-                                    <p className='sub-title'>{item.subtitle.split('\n').map((line, index) => <span key={index}>{line}<br /></span>)}</p>
+                                    <h1 className='title'>{t(item.projectTitle)}</h1>
+                                    <p className='sub-title'>{t(item.subtitle).split('\n').map((line, index) => <span key={index}>{line}<br /></span>)}</p>
 
                                     <div className='flex icons'>
                                         <div style={{ gap: "11px" }} className='flex'>
-                                            <div className='icon-link'></div>
-                                            <div className='icon-github'></div>
+                                            {/* <div className='icon-link'></div> */}
+                                            <div style = {{paddingLeft: "0.5rem"}} className='icon-github'></div>
                                         </div>
-                                        <a className='link flex' href="" > more
+                                        <a className='link flex' href="" > {t("more")}
                                             <span className='icon-arrow-right'></span>
                                         </a>
                                     </div>

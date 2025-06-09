@@ -1,34 +1,34 @@
 export const myProjects = [
-    {projectTitle: "Pokedex", categories:["react/next"], 
+    {projectTitle: "Pokédex", categories:["react/next"], 
         imgPath:"./images/pokemon.png",
-        subtitle: "Diese Web-App bietet einen Pokedex mit Filteroptionen, KI-generierten Beschreibungen, einem Kampfmodus und eigenen Pokémon. 🚀"
+        subtitle: "pok-desc"
     },
-    {projectTitle: "Portfolio-Webseite", categories:["react/next"],         
+    {projectTitle: "portfolio-title", categories:["react/next"],         
         imgPath:"./images/portfolio.png",
-        subtitle: "Diese Web-App gibt einen klaren Überblick über meine Person, meine Fähigkeiten und meinen Werdegang.\n"
+        subtitle: "portfolio-desc" 
     },
     {projectTitle: "FruityBeat", categories:["java", "javafx", "CSS"],          
         imgPath:"./images/fruity-baskets-game.png",
-        subtitle: "Ein Game bestehend aus 4 Levels, bei jedem Level, das durch BPM der Hintergrundmusik bestimmt ist, muss der Spieler das Obst mit dem Korb fangen"
+        subtitle: "fruityBeat-desc"
     },
-    {projectTitle: "MP3Player", categories:["java", "javafx"],          
+    {projectTitle: "mp3-player", categories:["java", "javafx"],          
         imgPath:"./images/mp3player.png",
-        subtitle: "Ein einfacher MP3-Player in Java mit JavaFX-GUI. Er bietet Wiedergabe- und Steuerungsfunktionen, einen Shuffle-Modus und eine Playlist-Verwaltung."
+        subtitle: "mp3-desc"
     },
-    {projectTitle: "Chat-program", categories:["java"],          
+    {projectTitle: "chat-prog", categories:["java"],          
         imgPath:"./images/chat.png",
-        subtitle: "Ziel dieses Projekts war es, Dateien basiered auf TCP und DCP auszutauschen und Textnachrichten zu versenden.\n"
+        subtitle: "chat-desc"
     },
-    {projectTitle: "Quiz-app", categories:["vue.js", "Spring-boot"],          
+    {projectTitle: "quiz-app", categories:["vue.js", "Spring-boot"],          
         imgPath:"./images/quiz.png",
-        subtitle: "Diese Fullstack-App mit Datenbankanbindung bietet eine Reihe von Funktionen. Registrierung, Anmeldung, Fragen-, Quiz-, Kategorienmanagement."
+        subtitle: "quiz-desc"
     },
-    {projectTitle: "Computergrafik", categories:["python"],          
+    {projectTitle: "cg", categories:["python"],          
         imgPath:"./images/graphic.png",
-        subtitle: "Entwicklung eines OpenGL-Programms, das fortschrittliche Rendering-Techniken wie Raytracing, Schattierung und Vektormathematik zeigt."
+        subtitle: "cg-desc"
     },
-    {projectTitle: "3d-SnackMan", categories:["python", "java", "Spring-boot","vue.js", "three.js"],          
+    {projectTitle: "sMan", categories:["python", "java", "Spring-boot","vue.js", "three.js"],          
     imgPath:"./images/sm.webp",
-    subtitle: "SnackMan ist ein 3D-Multiplayer-Browsergame, inspiriert von Pac-Man. Iss das Essen, jage deine Freunde, bleib an Hühnern hängen und skate zum Sieg!"
+    subtitle: "sMan-desc"
     },
 ]

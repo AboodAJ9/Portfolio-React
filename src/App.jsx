@@ -6,7 +6,7 @@ import Footer from './components/7-footer/Footer';
 import { useEffect, useState } from 'react';
 import Skills from './components/4-skills/Skills';
 import Timeline from './components/5-timeline/Timeline';
-
+import './i18n';
 function App() {
 
   const [showScrollButton, setShowScrollButton] = useState(false);
@@ -23,7 +23,7 @@ function App() {
   
 
   return (
-    <div id='up' className='container'>
+    <div id='up' className=' container'>
       <Header />
       <Hero />
       <div id = "projects" className='divider' />

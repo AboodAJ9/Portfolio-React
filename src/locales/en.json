@@ -1,0 +1,63 @@
+{
+  "welcome": "Hallo👋, I'm Abdallah",
+  "home": "Home",  
+  "projects": "Projects", 
+  "skills": "Skills", 
+  "timeline": "Timeline", 
+  "contact": "Contact", 
+
+
+  "intro": "I study media informatics at the Hochschule RheinMain and have already successfully completed all modules. Now I am looking for a mandatory internship to apply my knowledge practically and gain valuable experience in an interdisciplinary team", 
+
+
+  "all": "All Projects",
+  "more": "more",
+  "pok-desc": "This web app offers a Pokédex with filter options, AI-generated descriptions, a battle mode, and custom Pokémon. 🚀",
+  "portfolio-title": "Portfolio Website",
+  "portfolio-desc": "My portfolio website showcases my personal strengths, technical skills, and professional journey in a modern, interactive interface.",
+  "fruityBeat-desc": "A game consisting of 4 levels, where at each level, determined by the BPM of the background music, the player must catch the fruit with a basket.",
+  "mp3-desc": "A basic MP3 player in Java with a JavaFX GUI. It offers playback and control features, a shuffle mode, and playlist management.", 
+  "chat-prog": "Chat program",
+  "mp3-player": "Mp3 Player",
+  "chat-desc": "The aim of this project was to exchange files based on TCP and DCP and to send text messages.",
+  "quiz-app": "Quiz App",
+  "quiz-desc": "This full-stack app with database connectivity offers a range of features. Registration, login, question, quiz, and category management.",
+  "cg": "Computer Graphics", 
+  "cg-desc": "Development of an OpenGL program that demonstrates advanced rendering techniques such as ray tracing, shading, and vector mathematics.",
+  "sMan": "3D SnackMan", 
+  "sMan-desc": "SnackMan is a 3D multiplayer browser game inspired by Pac-Man. Eat the food, hunt your friends, cling to chickens, and skate to victory!",
+
+
+  "school-study": "School & Study",
+  "internships": "Internships",
+  "internship": "Internship",
+  "Confectionery": "Confectionery",
+  "sec-activities": "Secondary activities",
+  "driving-lic": "driving licence",
+  "sec-school": "Secondary school",
+  "high-sec": "High School",
+  "uni": "Study of media informatics",
+  "fsj": "voluntary social year",
+  "hospital-name": "University Hospital Giessen and Marburg",
+  "damascus": "Damascus, Syria",
+  "salt": "Al Salt, Jordan",
+  "salt-damas": "Al Salt, Jordan & Damascus, Syria",
+  "amman": "Amman, Jordanien",
+  "turkey": "Istanbul, Turkey",
+  "average": "average: 1.1",
+  "7grade-desc": "(comparable to comprehensive school, 7th grade)",
+  "8-9-grade-desc": "(comparable to comprehensive school 8th and 9th grade)",
+  "10-grade-desc": "(comparable to comprehensive school 10th grade)",
+  "med-desc": "First insights into medicine",
+  "fsj-desc": "Nursing activities on wards 137 and 227",
+  "temp-jobs": "Temporary jobs at a petrol station & garage",
+  "fundraising": "Fundraising",
+  "supermarkt": "Temporary jobs in supermarkts",
+  
+  "contact-desc": "Please feel free to contact me using this form or directly by e-mail. You will find my address in my cover letter and CV.",
+  "email": "Email adress:",
+  "msg": "Your message:", 
+  "sendbtn": "Send" 
+
+
+}

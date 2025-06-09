@@ -1,10 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import './header.css';
-const Header = () => {
+import { useTranslation } from 'react-i18next';
 
+const languages = [
+    { code: "de", label:"Deutsch", flag: "🇩🇪" },
+    { code: "en", label:"English",flag: "🇬🇧" },
+    { code: "ar", label:"عربي", flag: "🇸🇾" }
+]
+
+const Header = () => {
+    const { t, i18n } = useTranslation();
     const [showModal, setShowModal] = useState(false);
     const [theme, setTheme] = useState(localStorage.getItem("theme")?? 'dark');
-
+    const [isOpen, setIsOpen] = useState(false); 
+    const curLang = i18n.language; 
 
     useEffect(() => {
         document.body.classList.remove("light", "dark");
@@ -17,6 +26,15 @@ const Header = () => {
         setTheme(prev => prev === "dark" ? "light" : "dark");
     };
 
+    const toggleDropDown = () => setIsOpen(!isOpen); 
+
+    const changeLang = (code) => {
+        i18n.changeLanguage(code); 
+        setIsOpen(false); 
+    }; 
+
+    const current = languages.find((l) => l.code === curLang) || languages[0];
+
 
     return (
         <header className='flex '>
@@ -28,14 +46,26 @@ const Header = () => {
             
             <nav className=''>
                 <ul className=' flex'>
-                    <li><a href="#up">Home</a></li>
-                    <li><a href="#projects">Projekte</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#timeline">Lebenslauf</a></li>
-                    <li><a href="#contact">Kontakt</a></li>
+                    <li><a href="#up">{t("home")}</a></li>
+                    <li><a href="#projects">{t("projects")}</a></li>
+                    <li><a href="#skills">{t("skills")}</a></li>
+                    <li><a href="#timeline">{t("timeline")}</a></li>
+                    <li><a href="#contact">{t("contact")}</a></li>
                 </ul>
             </nav>
 
+            <button onClick={toggleDropDown} className='lang-button'> 
+                🌐 {current.code.toUpperCase()} ▼
+            </button>
+            {isOpen && (
+                <ul className='lang-dropdown'> 
+                    {languages.map((lang) => (
+                        <li key={lang.code} onClick={() => changeLang(lang.code)}> 
+                            <span className='flag'>{lang.flag}</span> {lang.label}
+                        </li>
+                    ))}
+                </ul>
+            )}
             <button
                 onClick={toggleTheme}
                 className=' mode flex'>
@@ -50,11 +80,11 @@ const Header = () => {
                                 setShowModal(false)
                             }} />
                         </li>
-                            <li><a href="#up">Home</a></li>
-                            <li><a href="#projects">Projekte</a></li>
-                            <li><a href="#skills">Skills</a></li>
-                            <li><a href="#timeline">Lebenslauf</a></li>
-                            <li><a href="#contact">Kontakt</a></li>
+                            <li><a href="#up">{t("home")}</a></li>
+                            <li><a href="#projects">{t("projects")}</a></li>
+                            <li><a href="#skills">{t("skills")}</a></li>
+                            <li><a href="#timeline">{t("timeline")}</a></li>
+                            <li><a href="#contact">{t("contact")}</a></li>
                     </ul>
                 </div>
             )}

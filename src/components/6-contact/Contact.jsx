@@ -4,9 +4,11 @@ import { useForm, ValidationError } from '@formspree/react';
 import Lottie from "lottie-react";
 import doneAnimation from "../../animations/done.json";
 import mailAnimation from "../../animations/email.json";
+import { useTranslation } from 'react-i18next';
 
 const Contact = () => {
 
+    const { t, i18n } = useTranslation();  
     const [state, handleSubmit] = useForm("mldbkpbl");
 
     return (
@@ -14,15 +16,15 @@ const Contact = () => {
 
             <h1 className='title flex'>
                 <span className=' icon-envelope'> </span>
-                Kontakt
+                {t("contact")}
             </h1>
-            <p className='sub-title'> Kontaktieren Sie mich gerne über dieses Formular oder direkt per E-Mail. Meine Adresse finden Sie in meinem Bewerbungsschreiben und Lebenslauf.</p>
+            <p className='sub-title'> {t("contact-desc")}</p>
 
 
             <div style={{ justifyContent: "space-between" }} className="flex">
                 <form className='flex-grow' onSubmit={handleSubmit}>
                     <div className=' flex'>
-                        <label htmlFor='email'>Email-Adresse:</label>
+                        <label style= {{}}htmlFor='email'>{t("email")}</label>
                         <input autoComplete='off' required type="email" name="email" id="email" />
                         <ValidationError
                             prefix="Email"
@@ -34,7 +36,7 @@ const Contact = () => {
                     </div>
 
                     <div className="flex" style={{ marginTop: "25px" }}>
-                        <label htmlFor="message">Ihre Nachricht:</label>
+                        <label htmlFor="message">{t("msg")}</label>
                         <textarea required name="message" id="message"></textarea>
                         <ValidationError
                             prefix="Message"

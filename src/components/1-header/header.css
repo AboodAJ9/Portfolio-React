@@ -22,7 +22,6 @@ header.flex {
     padding: 1rem 10%;
     padding-top: 29px;
     margin-bottom: 0rem;
-
 }
 
 header.flex nav {
@@ -225,4 +224,53 @@ header .fixed ul.modal li a {
         margin-right: -8%;
 
     }
+}
+
+.lang-switcher {
+  position: relative;
+  display: inline-block;
+}
+
+.lang-button {
+  background-color: #651414;
+  border: 1px solid #000000;
+  padding: 6px 12px;
+  cursor: pointer;
+  border-radius: 6px;
+  font-size: 14px;
+  transition: background 0.2s ease;
+}
+
+.lang-button:hover {
+  background-color: #3a0000;
+}
+
+.lang-dropdown {
+  position: absolute;
+  top: 110%;
+  right: 0;
+  background-color: #8e0101;
+  border: 1px solid #200101;
+  border-radius: 6px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  list-style: none;
+  margin: auto 30rem 0;
+  padding: 0;
+  width: 160px;
+  z-index: 100;
+}
+
+.lang-dropdown li {
+  padding: 10px 12px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background 0.2s ease;
+}
+
+.lang-dropdown li:hover {
+  background-color: #f0f0f0;
+}
+
+.flag {
+  margin-right: 8px;
 }

@@ -3,9 +3,11 @@ import './hero.css';
 import Lottie from 'lottie-react';
 import devAnimation from "../../animations/dev.json"
 import { motion } from 'framer-motion';
+import { useTranslation } from 'react-i18next';
 
 const Hero = () => {
     const lottieRef = useRef(); 
+    const { t, i18n } = useTranslation();
     console.log("dfdfd" + lottieRef.current)
     useEffect(() => {
         if (lottieRef.current) {
@@ -29,11 +31,11 @@ const Hero = () => {
                 </div>
 
                 <h1 className='title'>
-                    Hallo👋, ich bin Abdallah 
+                    {t("welcome")}
                 </h1>
 
                 <p className='sub-title'> 
-                    Ich studiere Medieninformatik an der Hochschule RheinMain und habe bereits alle Module erfolgreich abgeschlossen. Nun suche ich ein Pflichtpraktikum, um mein Wissen praktisch anzuwenden und wertvolle Erfahrungen in einem interdisziplinären Team zu sammeln
+                    {t("intro")}
                 </p>
 
                 <div className='all-icons flex'> 

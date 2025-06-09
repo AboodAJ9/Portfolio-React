@@ -1,0 +1,64 @@
+{
+  "welcome": "Hallo👋, ich bin Abdallah", 
+  "home": "Home",
+  "projects": "Projekte", 
+  "skills": "Skills", 
+  "timeline": "Lebenslauf", 
+  "contact": "Kontakt",
+
+
+  "intro": "Ich studiere Medieninformatik an der Hochschule RheinMain und habe bereits alle Module erfolgreich abgeschlossen. Nun suche ich ein Pflichtpraktikum, um mein Wissen praktisch anzuwenden und wertvolle Erfahrungen in einem interdisziplinären Team zu sammeln", 
+
+
+  "all": "alle Projekte",
+  "more": "mehr",
+  "pok-desc": "Diese Web-App bietet einen Pokédex mit Filteroptionen, KI-generierten Beschreibungen, einem Kampfmodus und eigenen Pokémon. 🚀",
+  "portfolio-title": "Portfolio-Webseite",
+  "portfolio-desc": "Meine Portfolio-Webseite präsentiert meine persönlichen Stärken, technischen Fähigkeiten und beruflichen Stationen in einer modernen, interaktiven Oberfläche.",
+  "fruityBeat-desc": "Ein Game bestehend aus 4 Levels, bei jedem Level, das durch BPM der Hintergrundmusik bestimmt ist, muss der Spieler das Obst mit dem Korb fangen",
+  "mp3-desc": "Ein einfacher MP3-Player in Java mit JavaFX-GUI. Er bietet Wiedergabe- und Steuerungsfunktionen, einen Shuffle-Modus und eine Playlist-Verwaltung.",
+  "chat-prog": "Chat-Programm",
+  "mp3-player": "Mp3-Player",
+  "chat-desc": "Ziel dieses Projekts war es, Dateien basiered auf TCP und DCP auszutauschen und Textnachrichten zu versenden.",
+  "quiz-app": "Quiz-App", 
+  "quiz-desc": "Diese Fullstack-App mit Datenbankanbindung bietet eine Reihe von Funktionen. Registrierung, Anmeldung, Fragen-, Quiz-, Kategorienmanagement.",
+  "cg": "Computergrafik", 
+  "cg-desc": "Entwicklung eines OpenGL-Programms, das fortschrittliche Rendering-Techniken wie Raytracing, Schattierung und Vektormathematik implementiert.",
+  "sMan": "3D-SnackMan", 
+  "sMan-desc": "SnackMan ist ein 3D-Multiplayer-Browsergame, inspiriert von Pac-Man. Iss das Essen, jage deine Freunde, bleib an Hühnern hängen und skate zum Sieg!",
+
+
+  "school-study": "Schule & Studium", 
+  "internships": "Praktika",
+  "internship": "Praktikum",
+  "Confectionery": "Konditorei",
+  "sec-activities": "Nebentätigkeiten",
+  "driving-lic": "Führerschein",
+  "sec-school": "Mittelschule",
+  "high-sec": "Gymnasium",
+  "uni": "Studium-Medieninformatik",
+  "fsj": "Frewilliges Soziales Jahr",
+  "hospital-name": "Uniklinikum Gießen und Marburg",
+  "damascus": "Damaskus, Syrien",
+  "salt": "Al Salt, Jordanien",
+  "salt-damas": "Al Salt, Jordanien & Damaskus, Syrien",
+  "amman": "Amman, Jordanien",
+  "turkey": "Istanbul, Türkei",
+  "average": "Durchschnitt: 1.1",
+  "7grade-desc": "(vergleichbar mit Gesamtschule, 7. Klasse)",
+  "8-9-grade-desc": "(vergleichbar mit Gesamtschule 8. und 9. Klasse)",
+  "10-grade-desc": "(vergleichbar mit Gesamtschule 10. Klasse)",
+  "med-desc": "Erste Einblicke in die Medizin",
+  "fsj-desc": "Pflegerische Tätigkeiten auf Station 137 und 227",
+  "temp-jobs": "Aushilfsjobs an einer Tankstelle & Kfz-Werkstatt",
+  "fundraising": "Fundraising",
+  "supermarkt": "Aushilfsjobs in Supermärkten",
+
+  
+  "contact-desc": "Kontaktieren Sie mich gerne über dieses Formular oder direkt per E-Mail. Meine Adresse finden Sie in meinem Bewerbungsschreiben und Lebenslauf.",
+  "email": "Email-Adresse:",
+  "msg": "Ihre Nachricht:", 
+  "sendbtn": "Senden" 
+
+
+}

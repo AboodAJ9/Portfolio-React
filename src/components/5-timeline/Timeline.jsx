@@ -2,10 +2,11 @@ import { motion, useInView } from 'framer-motion'
 import { useRef } from 'react'
 import './timeline.css'
 import timelineData from './timelineData'
-
+import { useTranslation } from 'react-i18next'
 
 const Timeline = () => {
   const ref = useRef(null);
+  const { t, i18n } = useTranslation();  
   const isInView = useInView(ref, { once: true, margin: '-20%' });
 
   const groupVariants = {
@@ -42,7 +43,7 @@ const Timeline = () => {
     <section className='time-sec'>
       <h1 className='title flex'>
         <span className=' icon-calendar'> </span>
-        Lebenslauf
+        {t("timeline")}
       </h1>
       <motion.div
         className="timeline-container"
@@ -76,10 +77,10 @@ const Timeline = () => {
             >
               <div className="timeline-content">
                 <small className="text-sm text-gray-400">{item.date}</small>
-                <h3 className="text-lg font-semibold">{item.title}</h3>
-                <p className="text-secondary">{item.company}</p>
+                <h3 className="text-lg font-semibold">{t(item.title)}</h3>
+                <p className="text-secondary">{t(item.company)}</p>
                 {item.description && (
-                  <p className="mt-2 text-gray-300">{item.description}</p>
+                  <p className="mt-2 text-gray-300">{t(item.description)}</p>
                 )}
               </div>
 

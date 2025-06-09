@@ -106,7 +106,9 @@ main section.right-section.flex{
     font-size: 0.8rem; 
     margin-top: 0.7rem; 
     margin-bottom: 1.2rem; 
+    height: 3.5rem; 
 }
+
 .icons a {
     color:var(--subtitle); 
 }
@@ -151,5 +153,3 @@ main section.right-section.flex{
 
     }
 }
-
-

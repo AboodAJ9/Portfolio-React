@@ -2,9 +2,11 @@ import './skills.css';
 import { motion, useInView } from 'framer-motion';
 import {logos} from './logos'; 
 import { useRef } from 'react';
+import { useTranslation } from 'react-i18next';
 
 const Skills = () => {
     
+    const { t, i18n } = useTranslation();  
     const ref = useRef(null); 
     const isInView = useInView(ref, { 
         once: true, 
@@ -43,7 +45,7 @@ const Skills = () => {
 
             <h1 className='title flex'>
                 <span className=' icon-lamp'> </span>
-                Skills
+                {t("skills")}
             </h1>
 
 
