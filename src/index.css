@@ -151,10 +151,11 @@ button:disabled{
   border-radius: 50%; 
   position: fixed; 
   bottom: 2rem; 
-  right: 3%; 
+  right: 3.75%; 
   text-align: center; 
   font-size: 1.3rem; 
   border: 1px solid rgba(255,255,255,0.2); 
+  z-index: 100; 
 }
 .scroll2Top:hover{
   background-color: rgb(32, 128, 224);  

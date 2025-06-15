@@ -6,7 +6,7 @@ import { useTranslation } from 'react-i18next'
 
 const Timeline = () => {
   const ref = useRef(null);
-  const { t, i18n } = useTranslation();  
+  const { t, i18n } = useTranslation();
   const isInView = useInView(ref, { once: true, margin: '-20%' });
 
   const groupVariants = {
@@ -64,38 +64,39 @@ const Timeline = () => {
             {/* gruppentitel */}
             <div className=" flex group-title">
               <button className="">
-                {group.title}
+                {t(group.title)}
               </button>
             </div>
 
-          {/* timeline-items */}
-          {group.items.map((item, itemIndex) => (
-            <motion.div
-              key={itemIndex}
-              className={`timeline-item ${itemIndex % 2 === 0 ? 'left' : 'right'}`}
-              variants={itemVariants(itemIndex)}
-            >
-              <div className="timeline-content">
-                <small className="text-sm text-gray-400">{item.date}</small>
-                <h3 className="text-lg font-semibold">{t(item.title)}</h3>
-                <p className="text-secondary">{t(item.company)}</p>
-                {item.description && (
-                  <p className="mt-2 text-gray-300">{t(item.description)}</p>
-                )}
-              </div>
-
-              {/* Icon-Kreis */}
-              <div className="timeline-icon-container">
-                <div className="timeline-icon-circle">
-                  <span className={`timeline-icon ${item.icon}`}></span>
+            {/* timeline-items */}
+            {group.items.map((item, itemIndex) => (
+              <motion.div
+                key={itemIndex}
+                className={`timeline-item ${itemIndex % 2 === 0 ? 'left' : 'right'}`}
+                variants={itemVariants(itemIndex)}
+              >
+                <div className="timeline-content">
+                  <small className="text-sm text-gray-400">{item.date}</small>
+                  <h3 className="text-lg font-semibold">{t(item.title)}</h3>
+                  <p className="text-secondary">{t(item.company)}</p>
+                  {item.description && (
+                    <p className="mt-2 text-gray-300">{t(item.description)}</p>
+                  )}
                 </div>
-              </div>
-            </motion.div>
-          ))}
-        </motion.div>
-      ))}
-    </motion.div>
-  </section>
-)};
+
+                {/* Icon-Kreis */}
+                <div className="timeline-icon-container">
+                  <div className="timeline-icon-circle">
+                    <span className={`timeline-icon ${item.icon}`}></span>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </motion.div>
+        ))}
+      </motion.div>
+    </section>
+  )
+};
 
 export default Timeline;

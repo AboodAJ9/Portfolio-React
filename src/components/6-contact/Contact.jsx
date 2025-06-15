@@ -24,7 +24,7 @@ const Contact = () => {
             <div style={{ justifyContent: "space-between" }} className="flex">
                 <form className='flex-grow' onSubmit={handleSubmit}>
                     <div className=' flex'>
-                        <label style= {{}}htmlFor='email'>{t("email")}</label>
+                        <label style= {{minWidth: "120px"}}htmlFor='email'>{t("email")}</label>
                         <input autoComplete='off' required type="email" name="email" id="email" />
                         <ValidationError
                             prefix="Email"
@@ -36,7 +36,7 @@ const Contact = () => {
                     </div>
 
                     <div className="flex" style={{ marginTop: "25px" }}>
-                        <label htmlFor="message">{t("msg")}</label>
+                        <label style = {{minWidth: "120px"}} htmlFor="message">{t("msg")}</label>
                         <textarea required name="message" id="message"></textarea>
                         <ValidationError
                             prefix="Message"

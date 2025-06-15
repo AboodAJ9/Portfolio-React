@@ -30,7 +30,7 @@
 
   "school-study": "Schule & Studium", 
   "internships": "Praktika",
-  "internship": "Praktikum",
+  "internship-og": "Praktikum, Orthopädische Gemeinschaftspraxis",
   "Confectionery": "Konditorei",
   "sec-activities": "Nebentätigkeiten",
   "driving-lic": "Führerschein",
@@ -53,7 +53,8 @@
   "temp-jobs": "Aushilfsjobs an einer Tankstelle & Kfz-Werkstatt",
   "fundraising": "Fundraising",
   "supermarkt": "Aushilfsjobs in Supermärkten",
-
+  "confe-inter": "Praktikum, Konditorei Klingelhöfer",
+  "Confe-desc": "Diverse Tätigkeiten im Verkauf und in der Backstube",
   
   "contact-desc": "Kontaktieren Sie mich gerne über dieses Formular oder direkt per E-Mail. Meine Adresse finden Sie in meinem Bewerbungsschreiben und Lebenslauf.",
   "email": "Email-Adresse:",

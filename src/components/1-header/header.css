@@ -17,14 +17,16 @@ header.flex {
     top: 0;
     left: 0;
     width: 100%;
-    z-index: 10;
-    justify-content: space-between;
+    z-index: 100;
+    justify-content: center;
+    align-items: center;
     padding: 1rem 10%;
     padding-top: 29px;
     margin-bottom: 0rem;
 }
 
 header.flex nav {
+    display: flex; 
     background-color: var(--bgHeader);
     border-radius: 55px;
     padding: 1rem 4rem;
@@ -160,7 +162,7 @@ header .fixed ul.modal li {
     padding-top: 0.5rem;
 }
 
-header .fixed ul.modal li:first-child {
+header .fixed ul.modal li.first-child {
     /* close-button*/
     text-align: right;
     border: none;
@@ -194,7 +196,7 @@ header .fixed ul.modal li a {
     }
 }
 
-@media (max-width: 800px) {
+@media (max-width: 985px) {
     header.flex nav {
         display: none;
 
@@ -206,71 +208,79 @@ header .fixed ul.modal li a {
 
     header button.menu {
         display: block;
+
     }
-
-
-
-
-}
-
-@media (max-width: 950px) {
     header.flex {
-        padding: 1rem 3rem;
+       justify-content: space-between ; 
+    }
+    .theme-control {
+        margin-right: 6%; 
+        
     }
 }
 
-@media (min-width: 950px) {
-    header .mode {
-        margin-right: -8%;
-
-    }
+.theme-control {
+    position: absolute; 
+    right: 3.75%; 
 }
 
-.lang-switcher {
-  position: relative;
-  display: inline-block;
-}
 
+
+
+/* ==========================
+   5. language-dropdown
+=============================
+*/
+
+/* lang-Dropdown */
 .lang-button {
-  background-color: var(--border);
-  border: 1px solid #000000;
-  padding: 6px 12px;
-  cursor: pointer;
-  border-radius: 6px;
-  font-size: 14px;
-  transition: background 0.2s ease;
+    background-color: var(--bgHeader);
+    border-radius: 8px;
+    color: var(--title);
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.2s;
 }
 
 .lang-button:hover {
-  background-color: #3a0000;
+    background-color: var(--bgSecondary);
+    border-color: var(--blue);
 }
 
 .lang-dropdown {
-  position: absolute;
-  top: 110%;
-  right: 0;
-  background-color: #8e0101;
-  border: 1px solid #200101;
-  border-radius: 6px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  list-style: none;
-  margin: auto 30rem 0;
-  padding: 0;
-  width: 160px;
-  z-index: 100;
+    position: absolute;
+    top: 100%;
+    background-color: var(--bgHeader);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    padding: 0.4rem 0;
+    z-index: 210;
+    min-width: 140px;
 }
 
 .lang-dropdown li {
-  padding: 10px 12px;
-  cursor: pointer;
-  font-size: 14px;
-  transition: background 0.2s ease;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    font-size: 0.95rem;
+    color: var(--title);
+    line-height: 1.5; /* wichtig! */
+    white-space: nowrap; /* optional: verhindert Umbrüche */
 }
 
 .lang-dropdown li:hover {
-  background-color: #f0f0f0;
+    background-color: var(--blue);
+    color: white;
 }
 
 .flag {
-  margin-right: 8px;
+    margin-right: 0.5rem;
+}
+
+.lang-container {
+    height: 100%; 
+    position:relative; 
 }

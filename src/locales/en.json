@@ -30,7 +30,7 @@
 
   "school-study": "School & Study",
   "internships": "Internships",
-  "internship": "Internship",
+  "internship-og": "Internship, orthopaedic group practice",
   "Confectionery": "Confectionery",
   "sec-activities": "Secondary activities",
   "driving-lic": "driving licence",
@@ -53,7 +53,10 @@
   "temp-jobs": "Temporary jobs at a petrol station & garage",
   "fundraising": "Fundraising",
   "supermarkt": "Temporary jobs in supermarkts",
-  
+  "confe-inter": "Internship, Konditorei Klingelhöfer",
+  "Confe-desc": "Various activities in sales and in the bakery", 
+
+
   "contact-desc": "Please feel free to contact me using this form or directly by e-mail. You will find my address in my cover letter and CV.",
   "email": "Email adress:",
   "msg": "Your message:", 

@@ -45,16 +45,16 @@ const timelineData = [
     items: [
       {
         date: 'Aug. 2016',
-        title: 'Praktikum, Konditorei Klingelhöfer',
+        title: 'confe-inter',
         company: 'Haspelstrasse 21 · 35037 Marburg',
-        description: 'Diverse Tätigkeiten im Verkauf und in der Backstube',
+        description: 'confe-desc',
         icon: 'icon-cake'
       },
       {
         date: 'Juni. 2019',
-        title: 'Praktikum, Orthopädische Gemeinschaftspraxis',
+        title: 'internship-og',
         company: 'Erlenring 9, 35037 Marburg',
-        description: 'Erste Einblicke in die Medizin',
+        description: 'med-desc',
         icon: 'icon-aid-kit'
       },
       {
@@ -77,7 +77,7 @@ const timelineData = [
       },
       {
         date: '2014-2015',
-        title: 'Aushilfsjobs an einer Takstelle & Kfz-Werkstatt',
+        title: 'temp-jobs',
         company: 'amman',
         icon: 'icon-gaspump'
       },      

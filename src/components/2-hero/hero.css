@@ -39,6 +39,7 @@ section.hero .avatar {
     border: 1px solid darkorange;
     padding: 1px;
     box-shadow: 2px 2px 40px rgba(196, 194, 194, 0.334) inset;
+    margin-top: 70px;
 }
 
 section.hero h1.title {
@@ -87,9 +88,9 @@ section.hero .animation {
         display: none;
     }
 
-    section.hero .avatar {
+    /* section.hero .avatar {
         margin-top: 10rem;
-    }
+    } */
 
 }
 
@@ -98,14 +99,14 @@ section.hero .animation {
         line-height: 3.5rem;
     }
 
-    section.hero .avatar {
+    /* section.hero .avatar {
         margin-top: 5rem;
-    }
+    } */
 }
 
 @media (max-width : 600px) {
-    section.hero .avatar {
+    /* section.hero .avatar {
         margin-top: 4rem;
-    }
+    } */
 
 }
