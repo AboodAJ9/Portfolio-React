@@ -11,6 +11,7 @@ const languages = [
 const Header = () => {
     const { t, i18n } = useTranslation();
     const [showModal, setShowModal] = useState(false);
+    const [arrow, setArrow] = useState("▼")
     const [theme, setTheme] = useState(localStorage.getItem("theme") ?? 'dark');
     const [isOpen, setIsOpen] = useState(false);
     const curLang = i18n.language;
@@ -26,11 +27,15 @@ const Header = () => {
         setTheme(prev => prev === "dark" ? "light" : "dark");
     };
 
-    const toggleDropDown = () => setIsOpen(!isOpen);
+    const toggleDropDown = () => {
+      setIsOpen(!isOpen);  
+      setArrow(prev =>prev ==="▼" ? "▲" : "▼"); 
+    } 
 
     const changeLang = (code) => {
         i18n.changeLanguage(code);
         setIsOpen(false);
+        setArrow("▼"); 
     };
 
     const current = languages.find((l) => l.code === curLang) || languages[0];
@@ -53,7 +58,7 @@ const Header = () => {
                     <li><a href="#contact">{t("contact")}</a></li>
                     <li>
                         <button onClick={toggleDropDown} className='lang-button'>
-                            🌐 {current.code.toUpperCase()} ▼
+                            🌐 {current.code.toUpperCase()} {arrow}
                         </button>
 
                         {isOpen && (
@@ -91,7 +96,7 @@ const Header = () => {
                         <li><a href="#contact">{t("contact")}</a></li>
                         <li className='lang-container'>
                             <button onClick={toggleDropDown} className='lang-button'>
-                                🌐 {current.code.toUpperCase()} ▼
+                                🌐 {current.code.toUpperCase()} {arrow}
                             </button>
 
                             {isOpen && (
