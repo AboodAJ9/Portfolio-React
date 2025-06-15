@@ -105,8 +105,8 @@ section.hero .animation {
 }
 
 @media (max-width : 600px) {
-    /* section.hero .avatar {
-        margin-top: 4rem;
-    } */
+    section.hero .avatar {
+        margin-top: 2rem;
+    }
 
 }
