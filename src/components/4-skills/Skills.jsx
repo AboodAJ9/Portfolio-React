@@ -1,21 +1,21 @@
 import './skills.css';
 import { motion, useInView } from 'framer-motion';
-import {logos} from './logos'; 
+import { logos } from './logos';
 import { useRef } from 'react';
 import { useTranslation } from 'react-i18next';
 
 const Skills = () => {
-    
-    const { t, i18n } = useTranslation();  
-    const ref = useRef(null); 
-    const isInView = useInView(ref, { 
-        once: true, 
+
+    const { t } = useTranslation();
+    const ref = useRef(null);
+    const isInView = useInView(ref, {
+        once: true,
         margin: "-200px 0px 0px 0px" // starten 200 px bevor element sichtbar wird. 
     });
     const containerVariants = {
-        hidden: { opacity: 0.2}, 
+        hidden: { opacity: 0.4 },
         visible: {
-            opacity: 1, 
+            opacity: 1,
             transition: {
                 staggerChildren: 0.07, // verzoegerung zwischen icons 
                 when: "beforeChildren",
@@ -24,19 +24,19 @@ const Skills = () => {
     };
 
     const iconVariants = {
-        hidden: { 
-            opacity: 0, 
-            x: -10, 
+        hidden: {
+            opacity: 0,
+            x: -10,
             scale: 0.8
         },
-        visible: { 
-            opacity: 1, 
-            x: 0, 
+        visible: {
+            opacity: 1,
+            x: 0,
             scale: 1,
-            transition: { 
-            type: "spring",
-            stiffness: 120,
-            damping: 100
+            transition: {
+                type: "spring",
+                stiffness: 120,
+                damping: 100
             }
         }
     };
@@ -48,24 +48,23 @@ const Skills = () => {
                 {t("skills")}
             </h1>
 
-
-            <motion.div 
-                ref = {ref}
+            <motion.div
+                ref={ref}
                 className="icons-container"
                 variants={containerVariants}
                 initial="hidden"
-                animate = {isInView? "visible": "hidden"}
+                animate={isInView ? "visible" : "hidden"}
             >
-            {logos.map((icon, index) => (
-                <motion.img 
-                    
-                    key={index}
-                    src={icon}
-                    alt={icon.split('/').pop().replace(/_logo\.png$/, '')}
-                    className='tech-icon'
-                    variants={iconVariants}
-                />
-            ))}
+                {logos.map((icon, index) => (
+                    <motion.img
+
+                        key={index}
+                        src={icon}
+                        alt={icon.split('/').pop().replace(/_logo\.png$/, '')}
+                        className='tech-icon'
+                        variants={iconVariants}
+                    />
+                ))}
 
             </motion.div>
 
