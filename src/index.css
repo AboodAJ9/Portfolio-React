@@ -189,3 +189,19 @@ button:disabled{
         font-size: 3.5em;
     }
 } */
+
+
+.app-wrapper {
+  display: flex;
+  background-color: black;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+.side-area {
+  position: relative;
+  width: 10vw;
+  min-height: 100%;
+  background-color: black;
+  overflow: hidden;
+}

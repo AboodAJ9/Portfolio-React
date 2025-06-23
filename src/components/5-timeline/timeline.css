@@ -1,42 +1,51 @@
+/* ==========================
+    1. title and calender-icon
+=============================*/
+section.time-sec .icon-calendar {
+  color: var(--subtitle);
+  margin-right: 2rem;
+  font-size: 2rem;
 
-section.time-sec .icon-calendar{
-    color: var(--subtitle); 
-    margin-right: 2rem; 
-    font-size: 2rem; 
+}
+
+section.time-sec .title {
+  font-size: 2.1rem;
+  color: var(--title);
+  margin-bottom: 1rem;
+}
+
+/* ==========================
+    2. (title-buttons)
+=============================*/
+section.time-sec .group-title button {
+  background-color: rgba(36, 37, 46);
+  width: 15rem;
+  padding: 0.75rem 0;
+  border-radius: 25px;
+  text-align: center;
+  color: var(--title);
+  font-size: 1.25rem;
+  text-transform: capitalize;
+  transition: 0.3s;
+  z-index: 1;
 
 }
 
+.light section.time-sec .group-title button {
+  color: white;
+  background-color: rgb(127, 127, 129);}
 
-section.time-sec .title{
-    font-size: 2.1rem; 
-    color: var(--title); 
-    margin-bottom: 1rem; 
-
-}
-section.time-sec .group-title button{
-    background-color: rgba(36, 37, 46, 1);
-    width: 15rem; 
-    padding: 0.75rem 0;  
-    border-radius: 25px;
-    text-align: center;
-    color: var(--title); 
-    font-size: 1.25rem;
-    text-transform: capitalize;
-    opacity: 0.6; 
-    transition: 0.3s; 
-
-}
-.light section.time-sec .group-title button{
-    color: white; 
-
-}
-.group-title{
-  /* background-color: rgba(36, 37, 46, 1); */
+.group-title {
   padding-bottom: 2rem;
-  color: var(--subtitle); 
+  padding-top: 3rem;
+  color: var(--subtitle);
   justify-content: center;
-  margin-bottom: -10px; 
+  margin-bottom: -10px;
 }
+
+/* ==========================
+    3. timeline-content
+=============================*/
 .timeline-container {
   position: relative;
   max-width: 1200px;
@@ -50,14 +59,13 @@ section.time-sec .group-title button{
   transform: translateX(-50%);
   width: 4px;
   height: 100%;
-  background: linear-gradient(
-    to bottom,
-    transparent 0%,
-    #4a5568 10%,
-    #4a5568 90%,
-    transparent 100%
-  );
-  z-index: 0; }
+  background: linear-gradient(to bottom,
+      transparent 0%,
+      #4a5568 10%,
+      #4a5568 90%,
+      transparent 100%);
+  z-index: 0;
+}
 
 .timeline-item {
   display: flex;
@@ -66,33 +74,37 @@ section.time-sec .group-title button{
   position: relative;
 }
 
+/*positioning of timeline-items*/
 .timeline-item.left .timeline-content {
   margin-right: auto;
-  text-align: right;
+  margin-left: -10px; 
 }
 
 .timeline-item.right .timeline-content {
   margin-left: auto;
-  text-align: left;
+  margin-right: -10px; 
 }
+
+
 
 .timeline-icon-container {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  top: 50%;
-  z-index:3;
+  /* top: 50%; */
+  z-index: 3;
 }
 
 .timeline-icon-circle {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background:rgba(25, 118, 210, 0.85);
+  background: rgba(25, 118, 210, 1);
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 0 4px 15px rgba(66, 153, 225, 0.3);
+  border: 0.25em solid rgb(255, 255, 255);
 }
 
 .timeline-icon {
@@ -100,35 +112,98 @@ section.time-sec .group-title button{
 }
 
 .timeline-content {
-  z-index:2; 
+  z-index: 2;
   width: 45%;
   padding: 25px;
   background: #2d3748;
   border-radius: 12px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  position: relative; /* important to place the triangle correctly*/
 }
 
 
+/*light mode*/
+.light .timeline-content {
+  border: 1.5px solid rgba(0, 0, 0, 0.1);
+  color: var(--title);
+  background: rgba(238, 235, 235, 0.294);
+  box-shadow: 0 4px 6px rgba(114, 41, 41, 0.1);
+}
 
 
-/*_____________________________________*/
+/* ==================== */
+/* triangle on the corners  */
+/* ==================== */
+
+/*for left items, triangle top right */
+.timeline-item.left .timeline-content::before {
+  content: "";
+  position: absolute;
+  top: 15px;
+  right: -10px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent #2d3748;
+  z-index: 1;
+}
+
+/* for right items, triangle top left */
+.timeline-item.right .timeline-content::before {
+  content: "";
+  position: absolute;
+  top: 15px;
+  left: -10px;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent #2d3748 transparent transparent;
+  z-index: 1;
+}
+.light .timeline-item.left .timeline-content::before {
+  border-color: transparent transparent transparent rgba(123, 118, 118, 0.294);
+}
+
+.light .timeline-item.right .timeline-content::before {
+  border-color: transparent rgba(123, 118, 118, 0.294) transparent transparent;
+}
+
+
+/* ==================== */
+/* responsive design (media query) */
+/* ==================== */
 @media (max-width: 768px) {
   .timeline-line {
-    left: 2px;
+    left: 0px;
   }
 
   .timeline-item {
     flex-direction: column;
-    margin: 40px 0;
+    margin: 40px 2px;
+    padding-left: 10px;
   }
 
   .timeline-item.left .timeline-content,
   .timeline-item.right .timeline-content {
     width: 100%;
-    margin-left: 0;
     text-align: left;
   }
 
+  .timeline-item.left .timeline-content::before,
+  .timeline-item.right .timeline-content::before {
+
+  left: -10px !important;
+  right: auto 0 !important;
+  border-style: solid;
+  border-width: 10px 10px 10px 0 !important;
+  border-color: transparent #2d3748 transparent transparent !important;
+  } 
+  .light .timeline-item.right .timeline-content::before,
+  .light .timeline-item.left .timeline-content::before {
+    border-color: transparent rgba(123, 118, 118, 0.294) transparent transparent !important;
+  }  
   .timeline-icon-container {
 
     left: 0px;
@@ -137,13 +212,13 @@ section.time-sec .group-title button{
   }
 
   .timeline-content {
-    margin-left: 20px !important;
+    margin-left: 24px !important;
   }
 
   .timeline-icon-circle {
-    margin-top: 1rem;
-    width: 40px;
-    height: 40px;
-
-}
+    width: 50px;
+    height: 50px;
+    margin-left: -1.8rem;
+    margin-top: 1.5rem;
+  }
 }

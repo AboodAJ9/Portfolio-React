@@ -10,14 +10,14 @@ const Skills = () => {
     const ref = useRef(null); 
     const isInView = useInView(ref, { 
         once: true, 
-        margin: "-100px 0px 0px 0px" // starten 100 px bevor element sichtbar wird. 
+        margin: "-200px 0px 0px 0px" // starten 200 px bevor element sichtbar wird. 
     });
     const containerVariants = {
-        hidden: { opacity: 0}, 
+        hidden: { opacity: 0.2}, 
         visible: {
             opacity: 1, 
             transition: {
-                staggerChildren: 0.1, // verzoegerung zwischen icons 
+                staggerChildren: 0.07, // verzoegerung zwischen icons 
                 when: "beforeChildren",
             }
         }
