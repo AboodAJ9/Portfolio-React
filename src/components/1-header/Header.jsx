@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import './header.css';
 import { useTranslation } from 'react-i18next';
+import LanguageDropdown from './LanguageDropdown';
 
 const languages = [
     { code: "de", label: "Deutsch", flag: "🇩🇪" },
@@ -11,9 +12,7 @@ const languages = [
 const Header = () => {
     const { t, i18n } = useTranslation();
     const [showModal, setShowModal] = useState(false);
-    const [arrow, setArrow] = useState("▼")
     const [theme, setTheme] = useState(localStorage.getItem("theme") ?? 'dark');
-    const [isOpen, setIsOpen] = useState(false);
     const curLang = i18n.language;
 
     useEffect(() => {
@@ -22,20 +21,12 @@ const Header = () => {
         localStorage.setItem("theme", theme);
     }, [theme]);
 
-
     const toggleTheme = () => {
         setTheme(prev => prev === "dark" ? "light" : "dark");
     };
 
-    const toggleDropDown = () => {
-      setIsOpen(!isOpen);  
-      setArrow(prev =>prev ==="▼" ? "▲" : "▼"); 
-    } 
-
     const changeLang = (code) => {
         i18n.changeLanguage(code);
-        setIsOpen(false);
-        setArrow("▼"); 
     };
 
     const current = languages.find((l) => l.code === curLang) || languages[0];
@@ -57,19 +48,11 @@ const Header = () => {
                     <li><a href="#timeline">{t("timeline")}</a></li>
                     <li><a href="#contact">{t("contact")}</a></li>
                     <li>
-                        <button onClick={toggleDropDown} className='lang-button'>
-                            🌐 {current.code.toUpperCase()} {arrow}
-                        </button>
-
-                        {isOpen && (
-                            <ul className='lang-dropdown'>
-                                {languages.map((lang) => (
-                                    <li key={lang.code} onClick={() => changeLang(lang.code)}>
-                                        <span className='flag'>{lang.flag}</span> {lang.label}
-                                    </li>
-                                ))}
-                            </ul>
-                        )}
+                        <LanguageDropdown
+                            current={current}
+                            languages={languages}
+                            changeLang={(code, closeDropdown) => { changeLang(code); closeDropdown(); }}
+                        />
                     </li>
                 </ul>
             </nav>
@@ -95,19 +78,11 @@ const Header = () => {
                         <li><a href="#timeline">{t("timeline")}</a></li>
                         <li><a href="#contact">{t("contact")}</a></li>
                         <li className='lang-container'>
-                            <button onClick={toggleDropDown} className='lang-button'>
-                                🌐 {current.code.toUpperCase()} {arrow}
-                            </button>
-
-                            {isOpen && (
-                                <ul className='lang-dropdown'>
-                                    {languages.map((lang) => (
-                                        <li key={lang.code} onClick={() => changeLang(lang.code)}>
-                                            <span className='flag'>{lang.flag}</span> {lang.label}
-                                        </li>
-                                    ))}
-                                </ul>
-                            )}
+                            <LanguageDropdown
+                                current={current}
+                                languages={languages}
+                                changeLang={(code, closeDropdown) => { changeLang(code); closeDropdown(); }}
+                            />
                         </li>
 
 

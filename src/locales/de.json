@@ -19,13 +19,13 @@
   "mp3-desc": "Ein einfacher MP3-Player in Java mit JavaFX-GUI. Er bietet Wiedergabe- und Steuerungsfunktionen, einen Shuffle-Modus und eine Playlist-Verwaltung.",
   "chat-prog": "Chat-Programm",
   "mp3-player": "Mp3-Player",
-  "chat-desc": "Ziel dieses Projekts war es, Dateien basiered auf TCP und DCP auszutauschen und Textnachrichten zu versenden.",
+  "chat-desc": "Ziel dieses Projekts war es, basiered auf TCP und UDP, Clients zu registrieren, Dateien auszutauschen und Textnachrichten zu versenden.",
   "quiz-app": "Quiz-App", 
   "quiz-desc": "Diese Fullstack-App mit Datenbankanbindung bietet eine Reihe von Funktionen. Registrierung, Anmeldung, Fragen-, Quiz-, Kategorienmanagement.",
   "cg": "Computergrafik", 
   "cg-desc": "Entwicklung eines OpenGL-Programms, das fortschrittliche Rendering-Techniken wie Raytracing, Schattierung und Vektormathematik implementiert.",
   "sMan": "3D-SnackMan", 
-  "sMan-desc": "SnackMan ist ein 3D-Multiplayer-Browsergame, inspiriert von Pac-Man. Iss das Essen, jage deine Freunde, bleib an Hühnern hängen und skate zum Sieg!",
+  "sMan-desc": "SnackMan ist ein 3D-Multiplayer-Browsergame, inspsiriert von Pac-Man. Iss das Essen, jage deine Freunde, bleib an Hühnern hängen und skate zum Sieg!",
 
 
   "school-study": "Schule & Studium", 

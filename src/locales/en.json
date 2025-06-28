@@ -19,7 +19,7 @@
   "mp3-desc": "A basic MP3 player in Java with a JavaFX GUI. It offers playback and control features, a shuffle mode, and playlist management.", 
   "chat-prog": "Chat program",
   "mp3-player": "Mp3 Player",
-  "chat-desc": "The aim of this project was to exchange files based on TCP and DCP and to send text messages.",
+  "chat-desc": "The aim of this project was to register clients, exchange files and send text messages based on TCP and UDP.",
   "quiz-app": "Quiz App",
   "quiz-desc": "This full-stack app with database connectivity offers a range of features. Registration, login, question, quiz, and category management.",
   "cg": "Computer Graphics", 
