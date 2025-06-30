@@ -20,12 +20,6 @@ const Header = () => {
         document.body.classList.add(theme);
         localStorage.setItem("theme", theme);
     }, [theme]);    
-  
-    useEffect(() => {
-        document.body.classList.add(current.code);
-        localStorage.setItem("lang", current.code);
-    }, [current.code]);    
-
 
     const toggleTheme = () => {
         setTheme(prev => prev === "dark" ? "light" : "dark");
