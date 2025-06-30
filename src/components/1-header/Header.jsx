@@ -13,24 +13,28 @@ const Header = () => {
     const { t, i18n } = useTranslation();
     const [showModal, setShowModal] = useState(false);
     const [theme, setTheme] = useState(localStorage.getItem("theme") ?? 'dark');
-    const curLang = i18n.language;
+    const current = languages.find((lang) => lang.code === i18n.language);
 
     useEffect(() => {
         document.body.classList.remove("light", "dark");
         document.body.classList.add(theme);
         localStorage.setItem("theme", theme);
-    }, [theme]);
+    }, [theme]);    
+  
+    useEffect(() => {
+        document.body.classList.add(current.code);
+        localStorage.setItem("lang", current.code);
+    }, [current.code]);    
+
 
     const toggleTheme = () => {
         setTheme(prev => prev === "dark" ? "light" : "dark");
     };
 
-    const changeLang = (code) => {
+    const handleLanguageChange = (code, closeDropdown) => {
         i18n.changeLanguage(code);
+        closeDropdown();
     };
-
-    const current = languages.find((l) => l.code === curLang) || languages[0];
-
 
     return (
         <header className='flex header'>
@@ -51,7 +55,7 @@ const Header = () => {
                         <LanguageDropdown
                             current={current}
                             languages={languages}
-                            changeLang={(code, closeDropdown) => { changeLang(code); closeDropdown(); }}
+                            onLanguageChange={handleLanguageChange}
                         />
                     </li>
                 </ul>
@@ -81,10 +85,9 @@ const Header = () => {
                             <LanguageDropdown
                                 current={current}
                                 languages={languages}
-                                changeLang={(code, closeDropdown) => { changeLang(code); closeDropdown(); }}
+                                onLanguageChange={handleLanguageChange}
                             />
                         </li>
-
 
                     </ul>
 

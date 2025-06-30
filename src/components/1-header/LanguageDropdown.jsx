@@ -2,7 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import './header.css';
 
 
-const LanguageDropdown = ({ current, languages, changeLang }) => {
+const LanguageDropdown = ({ current, languages, onLanguageChange }) => {
     const [isOpen, setIsOpen] = useState(false);
     const dropdownRef = useRef(null);
 
@@ -18,6 +18,7 @@ const LanguageDropdown = ({ current, languages, changeLang }) => {
             setIsOpen(false);
         }
     };
+
     useEffect(() => {
         document.addEventListener('mousedown', handleClickOutside);
         return () => {
@@ -34,7 +35,9 @@ const LanguageDropdown = ({ current, languages, changeLang }) => {
             {isOpen && (
                 <ul className='lang-dropdown'>
                     {languages.map((lang) => (
-                        <li key={lang.code} onClick={() => changeLang(lang.code, close)}>
+                        <li key={lang.code} onClick={() =>
+                            onLanguageChange(lang.code, close)}
+                        >
                             <span className='flag'>{lang.flag}</span> {lang.label}
                         </li>
                     ))}

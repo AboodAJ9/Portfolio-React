@@ -11,7 +11,7 @@ i18next.use(initReactI18next).init({
         de: { translation: de}, 
         ar: { translation: ar}
     }, 
-    lng: "de", //standard
+    lng: localStorage.getItem('lang') || ('de'),
     fallbackLng: "de", 
     interpolation: {escapeValue: false}
 
