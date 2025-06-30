@@ -1,4 +1,3 @@
-import React from 'react';
 import './main.css';
 import { useState } from 'react';
 import { myProjects } from './myProjects';
@@ -7,7 +6,7 @@ import { useTranslation } from 'react-i18next';
 
 const Main = () => {
      
-    const { t, i18n } = useTranslation();    
+    const { t } = useTranslation();    
     const [activeButton, setActive] = useState(0);
     const [projArr, setProjArr] = useState(myProjects);
     const buttons = [t("all"), "Spring-Boot", "react/Next", "vue.js", "java", "python"]
@@ -66,7 +65,9 @@ const Main = () => {
                                     <div className='flex icons'>
                                         <div style={{ gap: "11px" }} className='flex'>
                                             {/* <div className='icon-link'></div> */}
-                                            <div style = {{paddingLeft: "0.5rem"}} className='icon-github'></div>
+                                            <a href={item.git}>
+                                            <div style = {{paddingLeft: "0.5rem"}} className='icon-github'>
+                                            </div></a>
                                         </div>
                                         <a className='link flex' href="" > {t("more")}
                                             <span className='icon-arrow-right'></span>
