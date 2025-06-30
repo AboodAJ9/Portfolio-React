@@ -38,11 +38,12 @@ const LanguageDropdown = ({ current, languages, onLanguageChange }) => {
     return (
         <div ref={dropdownRef} className='lang-dropdown-container'>
             <button onClick={toggle} className='lang-button'>
-                🌐 {current.code.toUpperCase()} {isOpen ? "▲" : "▼"}
+                🌐 {current.code.toUpperCase()} 
+                <span className={`icon-cheveron-outline-down icon ${isOpen ? 'open' : ''}`}></span>
+
             </button>
 
-            {isOpen && (
-                <ul className='lang-dropdown'>
+                <ul className={`lang-dropdown ${isOpen ? 'open' : ''}`}>
                     {languages.map((lang) => (
                         <li key={lang.code} onClick={() =>
                             onLanguageChange(lang.code, close)}
@@ -51,7 +52,6 @@ const LanguageDropdown = ({ current, languages, onLanguageChange }) => {
                         </li>
                     ))}
                 </ul>
-            )}
         </div>
 
     );
