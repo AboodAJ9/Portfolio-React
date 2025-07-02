@@ -1,14 +1,16 @@
-import React, { useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import './hero.css';
 import Lottie from 'lottie-react';
 import devAnimation from "../../animations/dev.json"
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
+import TypeWriterEffect from './TypeWriterEffect';
 
 const Hero = () => {
+    document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
+    document.documentElement.style.setProperty('--vw', `${window.innerHeight * 0.01}px`);
     const lottieRef = useRef();
     const { t, i18n } = useTranslation();
-    console.log("dfdfd" + lottieRef.current)
     useEffect(() => {
         if (lottieRef.current) {
             // @ts-ignore
@@ -32,14 +34,24 @@ const Hero = () => {
                     <div className='icon-verified'> </div>
                 </div>
 
+                <div style={{ position: "relative" }} className='my-intro'>
+                    <h1 className='title'>
+                        {t("welcome")}
+                    </h1>
+                </div>
 
-                <h1 className='title'>
-                    {t("welcome")}
-                </h1>
-
-                <p className='sub-title'>
-                    {t("intro")}
-                </p>
+                <div className='text-wrapper' style={{ position: "relative" }} >
+                    <div className='placeholder'>
+                        <p className='sub-title'>
+                            {t("intro")}
+                        </p>
+                    </div>
+                    <div className="animated-text">
+                        <p className='sub-title'>
+                            <TypeWriterEffect text={t("intro")} speed={10} />
+                        </p>
+                    </div>
+                </div>
 
                 <div className='all-icons flex'>
                     <a href="https://github.com/AboodAJ9" className="icon icon-github"></a>
