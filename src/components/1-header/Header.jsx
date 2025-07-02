@@ -15,11 +15,19 @@ const Header = () => {
     const [theme, setTheme] = useState(localStorage.getItem("theme") ?? 'dark');
     const current = languages.find((lang) => lang.code === i18n.language);
 
+    const sections = [
+        { id: "up", label: t("home") },
+        { id: "projects", label: t("projects") },
+        { id: "skills", label: t("skills") },
+        { id: "timeline", label: t("timeline") },
+        { id: "contact", label: t("contact") },
+    ];
+    
     useEffect(() => {
         document.body.classList.remove("light", "dark");
         document.body.classList.add(theme);
         localStorage.setItem("theme", theme);
-    }, [theme]);    
+    }, [theme]);
 
     const toggleTheme = () => {
         setTheme(prev => prev === "dark" ? "light" : "dark");
@@ -40,11 +48,13 @@ const Header = () => {
 
             <nav className='nav'>
                 <ul className='flex'>
-                    <li><a href="#up">{t("home")}</a></li>
-                    <li><a href="#projects">{t("projects")}</a></li>
-                    <li><a href="#skills">{t("skills")}</a></li>
-                    <li><a href="#timeline">{t("timeline")}</a></li>
-                    <li><a href="#contact">{t("contact")}</a></li>
+
+                    {sections.map((section) => (
+                        <li key={section.id}>
+                            <a href={`#${section.id}`}>{section.label}</a>
+                        </li>
+                    ))}
+
                     <li>
                         <LanguageDropdown
                             current={current}
@@ -70,11 +80,11 @@ const Header = () => {
                                 setShowModal(false)
                             }} />
                         </li>
-                        <li><a href="#up">{t("home")}</a></li>
-                        <li><a href="#projects">{t("projects")}</a></li>
-                        <li><a href="#skills">{t("skills")}</a></li>
-                        <li><a href="#timeline">{t("timeline")}</a></li>
-                        <li><a href="#contact">{t("contact")}</a></li>
+                        {sections.map((section) => (
+                            <li key={section.id}>
+                                <a href={`#${section.id}`}>{section.label}</a>
+                            </li>
+                        ))}
                         <li className='lang-container'>
                             <LanguageDropdown
                                 current={current}
