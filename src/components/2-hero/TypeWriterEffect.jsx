@@ -9,12 +9,16 @@ const TypewriterEffect = ({ text, speed, activeSection }) => {
     nicht korrekt aktualisiert wird und der erste Buchstabe verdoppelt wird.
     --> TypeWriterEffect soll neu gerendert wird, wenn die activeSection-Prop geändert wird
     */ 
+
   useEffect(() => {
     setDisplayedText('');
     setIndex(0);
-  }, [activeSection, text]);  
+  }, [text]);  
 
-  
+  useEffect (() => {
+    setDisplayedText(displayedText);
+  }, [activeSection])
+
   
   useEffect(() => {
     const intervalId = setInterval(() => {
