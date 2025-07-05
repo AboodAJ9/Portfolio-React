@@ -17,6 +17,11 @@ html{
   padding: 0; 
 
 }
+
+#up, #projects, #skills, #timeline, #contact {
+  scroll-margin-top: 100px; /* Kompensiert die Header-Höhe */
+}
+
 .sub-title{
   font-weight: 500; 
 }

@@ -12,7 +12,7 @@ const Contact = () => {
     const [state, handleSubmit] = useForm("mldbkpbl");
 
     return (
-        <section className='contact-me'>
+        <section id = "contact" className='contact-me'>
 
             <h1 className='title flex'>
                 <span className=' icon-envelope'> </span>
@@ -60,17 +60,8 @@ const Contact = () => {
 
             </div>
 
-
-
-
-
-
-
-
         </section>
     );
 }
 
 export default Contact;
-
-//  Ich werde sie so bald wie möglich prüfen und mich bei Ihnen melden 🚀

@@ -24,7 +24,7 @@ const Timeline = () => {
 
   return (
 
-    <section className='time-sec'>
+    <section id='timeline' className='time-sec'>
       <h1 className='title flex'>
         <span className=' icon-calendar'> </span>
         {t("timeline")}

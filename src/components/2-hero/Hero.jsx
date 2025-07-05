@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import TypeWriterEffect from './TypeWriterEffect';
 
-const Hero = () => {
+const Hero = ( {activeSection} ) => {
     document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
     document.documentElement.style.setProperty('--vw', `${window.innerHeight * 0.01}px`);
     const lottieRef = useRef();
@@ -19,7 +19,7 @@ const Hero = () => {
         }
     }, []);
     return (
-        <section className='hero  flex'>
+        <section id='up' className='hero  flex'>
             <div className="left-section">
 
                 <div className="parent-avatar flex">
@@ -48,7 +48,7 @@ const Hero = () => {
                     </div>
                     <div className="animated-text">
                         <p className='sub-title'>
-                            <TypeWriterEffect text={t("intro")} speed={10} />
+                            <TypeWriterEffect text={t("intro")} speed={10} activeSection={activeSection} />
                         </p>
                     </div>
                 </div>

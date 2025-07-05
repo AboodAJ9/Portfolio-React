@@ -35,9 +35,11 @@ header.flex nav {
 
 }
 
-/* header.flex nav:focus {
-background-color: blue;
-} */
+.nav li.active a {
+  color: var(--blue);
+  font-weight: bold;
+}
+
 
 header ul.flex {
     gap: 50px;
@@ -47,7 +49,6 @@ header ul.flex {
 header ul li a {
     color: var(--title);
     opacity: 0.9;
-    /* nicht so starkes weiß für header */
     font-size: 1.2rem;
     font-weight: 500;
 
@@ -56,7 +57,6 @@ header ul li a {
 header ul li a:hover {
     color: var(--blue);
     opacity: 1;
-    /* nicht so starkes weiß für header */
     font-size: 1.2 rem;
 
 }
@@ -161,7 +161,11 @@ header .fixed ul.modal li {
     padding-bottom: 0.7rem;
     padding-top: 0.5rem;
 }
-
+header .fixed ul.modal li.active a {
+  font-weight: bold;
+  color: var(--blue);
+  /* background-color: #f3f4f6; */
+}
 header .fixed ul.modal li.first-child {
     /* close-button*/
     text-align: right;

@@ -25,7 +25,7 @@ const Main = () => {
     };
 
     return (
-        <main className='flex'>
+        <main id='projects' className='flex'>
 
             <section className='flex left-section'>
                 {buttons.map((label, index) => (
@@ -43,7 +43,7 @@ const Main = () => {
             </section>
             <section className=' flex right-section'>
 
-                <AnimatePresence mode="wait">
+                <AnimatePresence mode="sync">
 
 
                     {projArr.map((item) => {

@@ -9,20 +9,12 @@ const languages = [
     { code: "ar", label: "عربي", flag: "🇸🇾" }
 ]
 
-const Header = () => {
+const Header = ({ sections, activeSection }) => {
     const { t, i18n } = useTranslation();
     const [showModal, setShowModal] = useState(false);
     const [theme, setTheme] = useState(localStorage.getItem("theme") ?? 'dark');
     const current = languages.find((lang) => lang.code === i18n.language);
 
-    const sections = [
-        { id: "up", label: t("home") },
-        { id: "projects", label: t("projects") },
-        { id: "skills", label: t("skills") },
-        { id: "timeline", label: t("timeline") },
-        { id: "contact", label: t("contact") },
-    ];
-    
     useEffect(() => {
         document.body.classList.remove("light", "dark");
         document.body.classList.add(theme);
@@ -50,7 +42,7 @@ const Header = () => {
                 <ul className='flex'>
 
                     {sections.map((section) => (
-                        <li key={section.id}>
+                        <li key={section.id} className={activeSection === section.id ? "active" : ""}>
                             <a href={`#${section.id}`}>{section.label}</a>
                         </li>
                     ))}
@@ -81,11 +73,11 @@ const Header = () => {
                             }} />
                         </li>
                         {sections.map((section) => (
-                            <li key={section.id}>
+                            <li key={section.id} className={activeSection === section.id ? "active" : ""}>
                                 <a href={`#${section.id}`}>{section.label}</a>
                             </li>
                         ))}
-                        <li className='lang-container'>
+                        <li className='lang-container' >
                             <LanguageDropdown
                                 current={current}
                                 languages={languages}
