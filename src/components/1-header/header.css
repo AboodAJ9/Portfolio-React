@@ -53,7 +53,7 @@ header.flex nav li::after {
   height: 2px;
   background-color: var(--blue);
   transform: scaleX(0);
-  transform-origin: left;
+  transform-origin: right;
   transition: transform 0.4s ease;
 }
 

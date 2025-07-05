@@ -43,7 +43,7 @@ const Main = () => {
             </section>
             <section className=' flex right-section'>
 
-                <AnimatePresence mode="sync">
+                <AnimatePresence mode="wait">
 
 
                     {projArr.map((item) => {
@@ -87,26 +87,3 @@ const Main = () => {
 }
 
 export default Main;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-{/* <button onClick={()=>{
-                    handleClick(index); 
-                }} 
-                className={true? "active":null}> all projects </button> */}
-
-{/* <button> HTML & CSS </button>
-                <button> JS/TS </button>
-                <button> java </button>
-                <button> python</button> */}

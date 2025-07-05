@@ -18,10 +18,12 @@ html{
 
 }
 
-#up, #projects, #skills, #timeline, #contact {
-  scroll-margin-top: 100px; /* Kompensiert die Header-Höhe */
+#up, #skills, #timeline, #contact {
+  scroll-margin-top: 110px; /* Kompensiert die Header-Höhe */
 }
-
+#projects {
+  scroll-margin-top: 150px; /* mehr, da section ohne titel */
+}
 .sub-title{
   font-weight: 500; 
 }
@@ -188,14 +190,6 @@ button:disabled{
   }
 
 }
-
-/* @media (max-width: 835px) {
-    h1 {
-        font-size: 3.5em;
-    }
-} */
-
-
 .app-wrapper {
   display: flex;
   background-color: black;
