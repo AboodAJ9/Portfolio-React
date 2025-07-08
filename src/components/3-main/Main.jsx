@@ -5,11 +5,12 @@ import { AnimatePresence, motion, transform } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 
 const Main = () => {
-     
-    const { t } = useTranslation();    
+
+    const { t } = useTranslation();
     const [activeButton, setActive] = useState(0);
     const [projArr, setProjArr] = useState(myProjects);
     const buttons = [t("all"), "Spring-Boot", "react/Next", "vue.js", "java", "python"]
+    const [flippedCards, setFlippedCards] = useState({});
 
     const handleClick = (index) => {
         setActive(index);
@@ -23,6 +24,13 @@ const Main = () => {
                 ));
         setProjArr(filtered);
     };
+
+    const handleFlip = (key) => {
+        setFlippedCards((prevCards) => ({
+            ...prevCards,
+            [key]: !prevCards[key],
+        }));
+    }
 
     return (
         <main id='projects' className='flex'>
@@ -45,7 +53,6 @@ const Main = () => {
 
                 <AnimatePresence mode="wait">
 
-
                     {projArr.map((item) => {
                         return (
 
@@ -54,27 +61,58 @@ const Main = () => {
                                 initial={{ transform: "scale(0.5)" }}
                                 animate={{ transform: "scale(1)" }}
                                 transition={{ type: "spring", damping: 8, stiffness: 40, delay: 0.001 }}
+                                key={item.imgPath}
+                                className={`card ${flippedCards[item.imgPath] ? 'flipped' : ''}`}
+                            >
+                                <div className="card-inner">
 
+                                    <div className='card-front'>
+                                        <img width={266} src={item.imgPath} alt="" />
+                                        <div style={{ width: "266px" }} className='box'>
+                                            <h1 className='title'>{t(item.projectTitle)}</h1>
+                                            <p className='sub-title'>{t(item.subtitle).split('\n').map((line, index) => <span key={index}>{line}<br /></span>)}</p>
 
-                                key={item.imgPath} className=' card'>
-                                <img width={266} src={item.imgPath} alt="" />
-                                <div style={{ width: "266px" }} className='box'>
-                                    <h1 className='title'>{t(item.projectTitle)}</h1>
-                                    <p className='sub-title'>{t(item.subtitle).split('\n').map((line, index) => <span key={index}>{line}<br /></span>)}</p>
-
-                                    <div className='flex icons'>
-                                        <div style={{ gap: "11px" }} className='flex'>
-                                            {/* <div className='icon-link'></div> */}
-                                            <a href={item.git}>
-                                            <div style = {{paddingLeft: "0.5rem"}} className='icon-github'>
-                                            </div></a>
+                                            <div className='flex icons'>
+                                                <div style={{ gap: "11px" }} className='flex'>
+                                                    {/* <div className='icon-link'></div> */}
+                                                    <a href={item.git}>
+                                                        <div style={{ paddingLeft: "0.5rem" }} className='icon-github'>
+                                                        </div></a>
+                                                </div>
+                                                <a
+                                                    className='link flex'
+                                                    href="#"
+                                                    onClick={(e) => {
+                                                        e.preventDefault();
+                                                        handleFlip(item.imgPath);
+                                                    }}
+                                                > {t("more")} <span className='icon-forward' style={{ marginLeft: "3px" }}> </span>
+                                                </a>
+                                            </div>
                                         </div>
-                                        <a className='link flex' href="" > {t("more")}
-                                            <span className='icon-arrow-right'></span>
-                                        </a>
-                                    </div>
 
+
+                                    </div>
+                                    <div className='card-back' >
+                                        <div className='tech-icons'>
+                                            {item.techs.map((tech, index) => (
+                                                <span key={index} className='tech-tag'> {tech} </span>
+                                            ))}
+
+                                        </div>
+                                        <div className = "tech-icons" style={{position: "absolute", bottom: "10px"}}> 
+                                            <a className='link flex' onClick={(e) => {
+                                                e.preventDefault();
+                                                handleFlip(item.imgPath);
+                                            }}
+
+                                            > {t("back")} <span className='icon-reply'> </span>
+                                            </a>
+                                        </div>
+                                    </div>
                                 </div>
+
+
                             </motion.article>
                         );
                     })}
@@ -82,7 +120,7 @@ const Main = () => {
                 </AnimatePresence>
 
             </section>
-        </main>
+        </main >
     );
 }
 

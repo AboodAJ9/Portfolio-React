@@ -22,5 +22,6 @@ export const logos = [
     '/techIcons/figma_logo.png',
     '/techIcons/xd_logo.png',
     '/techIcons/blender_logo.png',
-    '/techIcons/hibernate_logo.png'
+    '/techIcons/hibernate_logo.png',
+    '/techIcons/rest_logo.png'
 ]

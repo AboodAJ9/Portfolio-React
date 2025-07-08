@@ -26,6 +26,7 @@
   "cg-desc": "Development of an OpenGL program that demonstrates advanced rendering techniques such as ray tracing, shading, and vector mathematics.",
   "sMan": "3D SnackMan", 
   "sMan-desc": "SnackMan is a 3D multiplayer browser game inspired by Pac-Man. Eat the food, hunt your friends, cling to chickens, and skate to victory!",
+  "back": "back",
 
 
   "school-study": "School & Study",
