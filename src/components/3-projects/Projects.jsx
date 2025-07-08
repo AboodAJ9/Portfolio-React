@@ -1,16 +1,17 @@
-import './main.css';
-import { useState } from 'react';
+import './projects.css';
+import { useEffect, useRef, useState } from 'react';
 import { myProjects } from './myProjects';
 import { AnimatePresence, motion, transform } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 
 const Main = () => {
-
     const { t } = useTranslation();
     const [activeButton, setActive] = useState(0);
     const [projArr, setProjArr] = useState(myProjects);
     const buttons = [t("all"), "Spring-Boot", "react/Next", "vue.js", "java", "python"]
     const [flippedCards, setFlippedCards] = useState({});
+    const [visibleCards, setVisibleCards] = useState(3);
+    const projectRef = useRef(null);
 
     const handleClick = (index) => {
         setActive(index);
@@ -32,8 +33,23 @@ const Main = () => {
         }));
     }
 
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth <= 700) {
+                setVisibleCards(3);
+            } else {
+                setVisibleCards(projArr.length);
+            }
+        };
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => {
+            window.removeEventListener('resize', handleResize);
+        };
+    }, [projArr.length]);
+
     return (
-        <main id='projects' className='flex'>
+        <main ref={projectRef} id='projects' className='flex'>
 
             <section className='flex left-section'>
                 {buttons.map((label, index) => (
@@ -53,7 +69,7 @@ const Main = () => {
 
                 <AnimatePresence mode="wait">
 
-                    {projArr.map((item) => {
+                    {projArr.slice(0, visibleCards).map((item) => {
                         return (
 
                             <motion.article
@@ -81,9 +97,8 @@ const Main = () => {
                                                 </div>
                                                 <a
                                                     className='link flex'
-                                                    href="#"
+                                                    role='button'
                                                     onClick={(e) => {
-                                                        e.preventDefault();
                                                         handleFlip(item.imgPath);
                                                     }}
                                                 > {t("more")} <span className='icon-forward' style={{ marginLeft: "3px" }}> </span>
@@ -100,7 +115,7 @@ const Main = () => {
                                             ))}
 
                                         </div>
-                                        <div className = "tech-icons" style={{position: "absolute", bottom: "10px"}}> 
+                                        <div className="tech-icons" style={{ position: "absolute", bottom: "10px" }}>
                                             <a className='link flex' onClick={(e) => {
                                                 e.preventDefault();
                                                 handleFlip(item.imgPath);
@@ -114,11 +129,27 @@ const Main = () => {
 
 
                             </motion.article>
+
                         );
                     })}
 
                 </AnimatePresence>
+                {visibleCards < projArr.length && projArr.length > 3 && (
 
+                    <a className='more-button' onClick={() => {
+                        setVisibleCards(visibleCards + 3);
+                    }}> <span className='icon-chevron-circle-down'>  </span> {t("more-proj")}
+                    </a>
+                )}
+
+                {visibleCards >= projArr.length && projArr.length > 3 && window.innerWidth <= 700 && (
+
+                    <a className='less-button' onClick={() => {
+                        setVisibleCards(3);
+                        projectRef.current.scrollIntoView({ behavior: 'smooth' });
+                    }}> <span>  </span> {t("less-proj")}
+                    </a>
+                )}
             </section>
         </main >
     );

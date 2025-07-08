@@ -1,6 +1,6 @@
 import Hero from './components/2-hero/Hero';
 import Header from './components/1-header/Header';
-import Main from './components/3-main/Main';
+import Projects from './components/3-projects/Projects';
 import Contact from './components/6-contact/Contact';
 import Footer from './components/7-footer/Footer';
 import { useEffect, useState } from 'react';
@@ -100,7 +100,7 @@ function App() {
       <Header sections={sections} activeSection={activeSection} />
       <Hero activeSection={activeSection} />
       <div className='divider' />
-      <Main />
+      <Projects />
       <div className='divider' />
 
       <Skills />

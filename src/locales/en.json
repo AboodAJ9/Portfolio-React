@@ -12,6 +12,8 @@
 
   "all": "all projects",
   "more": "more",
+  "more-proj": "more projects",
+  "less-proj": "less projects",
   "pok-desc": "This web app offers a Pokédex with filter options, AI-generated descriptions, a battle mode, and custom Pokémon. 🚀",
   "portfolio-title": "Portfolio Website",
   "portfolio-desc": "My portfolio website showcases my personal strengths, technical skills, and professional journey in a modern, interactive interface.",
