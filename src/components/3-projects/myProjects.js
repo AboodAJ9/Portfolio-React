@@ -53,7 +53,7 @@ export const myProjects = [
         subtitle: "cg-desc",
         git: "", 
         techs : [
-            "Python", "Numpy", "OpenGL", "Raytracing", "Shading", "Vector Mathematics"
+            "Python", "Numpy", "OpenGL", "Raytracing", "C" , "Shading", "Vector Mathematics"
         ]
     },
     {projectTitle: "sMan", categories:["python", "java", "Spring-boot","vue.js", "three.js"],          

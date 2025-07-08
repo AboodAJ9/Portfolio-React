@@ -116,9 +116,11 @@ const Main = () => {
 
                                         </div>
                                         <div className="tech-icons" style={{ position: "absolute", bottom: "10px" }}>
-                                            <a className='link flex' onClick={(e) => {
-                                                e.preventDefault();
-                                                handleFlip(item.imgPath);
+                                            <a 
+                                                className='link flex'
+                                                role='button' 
+                                                onClick={(e) => {
+                                                    handleFlip(item.imgPath);
                                             }}
 
                                             > {t("back")} <span className='icon-reply'> </span>

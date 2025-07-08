@@ -98,11 +98,13 @@ function App() {
   return (
     <div className=' container'>
       <Header sections={sections} activeSection={activeSection} />
+      
       <Hero activeSection={activeSection} />
       <div className='divider' />
+      
       <Projects />
       <div className='divider' />
-
+      
       <Skills />
       <div className='divider' />
 
