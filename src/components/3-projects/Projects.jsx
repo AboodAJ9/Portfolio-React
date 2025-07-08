@@ -147,7 +147,7 @@ const Main = () => {
                     <a className='less-button' onClick={() => {
                         setVisibleCards(3);
                         projectRef.current.scrollIntoView({ behavior: 'smooth' });
-                    }}> <span>  </span> {t("less-proj")}
+                    }}> <span className='icon-chevron-circle-down' style={{ transform: "rotate(180deg)" }}>  </span> {t("less-proj")}
                     </a>
                 )}
             </section>
