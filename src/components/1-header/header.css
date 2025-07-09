@@ -208,42 +208,7 @@ header .fixed ul.modal li a {
 
 
 
-/* ==========================
-    4. Responsive Design (media query)
-=============================
-*/
 
-@media (max-width: 700px) {
-
-    header .icon-menu,
-    header .mode {
-        width: 2.5rem;
-        height: 2.5rem;
-    }
-}
-
-@media (max-width: 985px) {
-    header.flex nav {
-        display: none;
-
-    }
-
-    header.flex {
-        backdrop-filter: blur(8px);
-    }
-
-    header button.menu {
-        display: block;
-
-    }
-    header.flex {
-       justify-content: space-between ; 
-    }
-    .theme-control {
-        margin-right: 6%; 
-        
-    }
-}
 
 .theme-control {
     position: absolute; 
@@ -254,7 +219,7 @@ header .fixed ul.modal li a {
 
 
 /* ==========================
-   5. language-dropdown
+   4. language-dropdown
 =============================
 */
 
@@ -293,7 +258,7 @@ header .fixed ul.modal li a {
 }
 .lang-dropdown.open {
     opacity: 1; 
-    transform: translateY(0);
+    transform: translateY(15px);
     pointer-events: auto;
 }
 .lang-button .icon{
@@ -328,4 +293,47 @@ header .fixed ul.modal li a {
 .lang-container {
     height: 100%; 
     position:relative; 
+}
+
+
+
+/* ==========================
+    5. Responsive Design (media query)
+=============================
+*/
+
+@media (max-width: 700px) {
+
+    header .icon-menu,
+    header .mode {
+        width: 2.5rem;
+        height: 2.5rem;
+    }
+}
+
+@media (max-width: 985px) {
+    header.flex nav {
+        display: none;
+
+    }
+
+    header.flex {
+        backdrop-filter: blur(8px);
+    }
+
+    header button.menu {
+        display: block;
+
+    }
+    header.flex {
+       justify-content: space-between ; 
+    }
+    .theme-control {
+        margin-right: 6%; 
+        
+    }
+    .lang-dropdown {
+        top: 70%;
+    }
+ 
 }
