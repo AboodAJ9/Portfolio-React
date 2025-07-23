@@ -89,6 +89,10 @@ main section.right-section.flex {
     height: 100%;
     transform-style: preserve-3d;
     transition: transform 0.6s;
+
+    /* Safari fix */
+    -webkit-transform-style: preserve-3d;
+    -webkit-transition: transform 0.6s;
 }
 
 .card.flipped .card-inner {
@@ -102,6 +106,12 @@ main section.right-section.flex {
     backface-visibility: hidden;
     border-radius: 5px;
     overflow: hidden;
+
+    -webkit-backface-visibility: hidden;
+    /* Safari fix */
+    transform: translateZ(0);
+    /* Hardware beschleunigen */
+    -webkit-transform: translateZ(0);
 }
 
 .card-back {
@@ -205,20 +215,23 @@ main section.right-section.flex {
     margin-right: 12px;
 }
 
-.more-button, .less-button {
-    display: flex; 
+.more-button,
+.less-button {
+    display: flex;
     width: 100%;
     justify-content: center;
     margin-top: 1rem;
     font-size: 0.95rem;
     color: var(--blue);
-    font-weight: bold; 
+    font-weight: bold;
     cursor: pointer;
 }
+
 .icon-chevron-circle-down {
     align-self: center;
     margin-right: 0.5rem;
 }
+
 /* ==========================
     3. media query
 =============================*/
