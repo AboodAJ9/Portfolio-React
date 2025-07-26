@@ -1,5 +1,5 @@
 import './projects.css';
-import { useEffect, useRef, useState } from 'react';
+import { useLayoutEffect, useRef, useState } from 'react';
 import { myProjects } from './myProjects';
 import { AnimatePresence, motion, transform } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
@@ -33,7 +33,10 @@ const Main = () => {
         }));
     }
 
-    useEffect(() => {
+    // useLayoutEffect wird synchron nach dem DOM-Paint ausgeführt, noch bevor 
+    // der Browser sichtbar rendern kann. Dadurch vermeidet man kurzes visuelles Springen
+    // der darunter liegenden Komponente
+    useLayoutEffect(() => {
         const handleResize = () => {
             if (window.innerWidth <= 700) {
                 setVisibleCards(3);
@@ -47,7 +50,6 @@ const Main = () => {
             window.removeEventListener('resize', handleResize);
         };
     }, [projArr.length]);
-
     return (
         <main ref={projectRef} id='projects' className='flex'>
 
@@ -68,10 +70,8 @@ const Main = () => {
             <section className=' flex right-section'>
 
                 <AnimatePresence mode="wait">
-
                     {projArr.slice(0, visibleCards).map((item) => {
                         return (
-
                             <motion.article
                                 layout
                                 initial={{ transform: "scale(0.5)" }}
