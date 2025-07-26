@@ -4,7 +4,7 @@ export const myProjects = [
         subtitle: "pok-desc",
         git: "https://github.com/AboodAJ9/Pokedex", 
         techs : [
-            "React", "Next.js", "TypeScript", "JSX", "styled-components", "GraphQL"
+            "React", "Next.js", "TypeScript", "JSX", "styled-components", "PokéAPI", "GraphQL"
 , 
         ]
     },
