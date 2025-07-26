@@ -47,7 +47,7 @@ const Contact = () => {
                         />
                     </div>
                     <button className='submit' type="submit" disabled={state.submitting}>
-                        Senden
+                        {t("sendbtn")}
                     </button>
                     {state.succeeded && (
                         <h1 className='flex' style={{ fontSize: "18px", margin: "0.5rem", textAlign: "center" }}>
