@@ -1,18 +1,20 @@
-import React from 'react';
+import { Suspense, lazy, useRef, useEffect } from 'react';
 import './contact.css';
 import { useForm, ValidationError } from '@formspree/react';
-import Lottie from "lottie-react";
+// import Lottie from "lottie-react";
 import doneAnimation from "../../animations/done.json";
 import mailAnimation from "../../animations/email.json";
 import { useTranslation } from 'react-i18next';
 
+const Lottie = lazy(() => import("lottie-react"));
+
 const Contact = () => {
 
-    const { t, i18n } = useTranslation();  
+    const { t, i18n } = useTranslation();
     const [state, handleSubmit] = useForm("mldbkpbl");
 
     return (
-        <section id = "contact" className='contact-me'>
+        <section id="contact" className='contact-me'>
 
             <h1 className='title flex'>
                 <span className=' icon-envelope'> </span>
@@ -24,7 +26,7 @@ const Contact = () => {
             <div style={{ justifyContent: "space-between" }} className="flex">
                 <form className='flex-grow' onSubmit={handleSubmit}>
                     <div className=' flex'>
-                        <label style= {{minWidth: "120px"}}htmlFor='email'>{t("email")}</label>
+                        <label style={{ minWidth: "120px" }} htmlFor='email'>{t("email")}</label>
                         <input autoComplete='off' required type="email" name="email" id="email" />
                         <ValidationError
                             prefix="Email"
@@ -36,7 +38,7 @@ const Contact = () => {
                     </div>
 
                     <div className="flex" style={{ marginTop: "25px" }}>
-                        <label style = {{minWidth: "120px"}} htmlFor="message">{t("msg")}</label>
+                        <label style={{ minWidth: "120px" }} htmlFor="message">{t("msg")}</label>
                         <textarea required name="message" id="message"></textarea>
                         <ValidationError
                             prefix="Message"
@@ -50,12 +52,14 @@ const Contact = () => {
                     {state.succeeded && (
                         <h1 className='flex' style={{ fontSize: "18px", margin: "0.5rem", textAlign: "center" }}>
                             <Lottie className='lottie' loop={false} style={{ height: 37, paddingRight: "10px" }} animationData={doneAnimation} />
-                            Ihre Nachricht wurde erfolgreich gesendet.</h1>
+                            {t("confirm")}</h1>
                     )}
                 </form>
                 <div className="animation">
-
-                    <Lottie className=' mail-animation' animationData={mailAnimation} />
+                    <Suspense fallback={
+                        <div style={{ minHeight: "400px" }}>{t("loading")}</div>}>
+                        <Lottie className=' mail-animation' animationData={mailAnimation} />
+                    </Suspense>
                 </div>
 
             </div>

@@ -1,4 +1,6 @@
 {
+  "loading": "loading...",
+
   "welcome": "Hallo👋, I'm Abdallah",
   "home": "Home",  
   "projects": "Projects", 
@@ -63,7 +65,7 @@
   "contact-desc": "Please feel free to contact me using this form or directly by e-mail. You will find my address in my cover letter and CV.",
   "email": "Email adress:",
   "msg": "Your message:", 
-  "sendbtn": "Send" 
-
+  "sendbtn": "Send", 
+  "confirm": "Your message has been sent successfully." 
 
 }

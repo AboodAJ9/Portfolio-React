@@ -23,5 +23,6 @@ export const logos = [
     '/techIcons/xd_logo.png',
     '/techIcons/blender_logo.png',
     '/techIcons/hibernate_logo.png',
-    '/techIcons/rest_logo.png'
+    '/techIcons/rest_logo.png', 
+    '/techIcons/graphql_logo.png'
 ]

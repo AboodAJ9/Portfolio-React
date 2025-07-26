@@ -1,23 +1,25 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, lazy, Suspense } from 'react';
 import './hero.css';
-import Lottie from 'lottie-react';
+// import Lottie from 'lottie-react';
 import devAnimation from "../../animations/dev.json"
 import { motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 import TypeWriterEffect from './TypeWriterEffect';
 
-const Hero = ( {activeSection} ) => {
+const Lottie = lazy(() => import("lottie-react"));
+
+const Hero = ({ activeSection }) => {
     document.documentElement.style.setProperty('--vh', `${window.innerHeight * 0.01}px`);
     document.documentElement.style.setProperty('--vw', `${window.innerHeight * 0.01}px`);
-    const lottieRef = useRef();
-    const { t, i18n } = useTranslation();
-    useEffect(() => {
-        if (lottieRef.current) {
-            // @ts-ignore
-            //https://lottiereact.com/
-            lottieRef.current.setSpeed(0.5);
-        }
-    }, []);
+    const lottieRef = useRef(null);
+    const { t } = useTranslation();
+
+    const handleLottieLoaded = () => {
+        //@ts-ignore
+        //https://lottiereact.com/        
+        lottieRef?.current?.setSpeed?.(0.5);
+    };
+
     return (
         <section id='up' className='hero  flex'>
             <div className="left-section">
@@ -30,7 +32,8 @@ const Hero = ( {activeSection} ) => {
                         src="./ownImage_cycle.png" className="avatar" alt="private"
                         onContextMenu={(e) => e.preventDefault()}
                         draggable={false}
-                        style={{ userSelect: "none", pointerEvents: "none" }} />
+                        style={{ userSelect: "none", pointerEvents: "none" }} 
+                    />
                     <div className='icon-verified'> </div>
                 </div>
 
@@ -62,12 +65,16 @@ const Hero = ( {activeSection} ) => {
 
             </div>
             <div className="right-section animation">
-
-                <Lottie
-                    lottieRef={lottieRef}
-                    className='mail-animation'
-                    style={{ height: "500px" }}
-                    animationData={devAnimation} />
+                <Suspense fallback={
+                    <div style={{ minHeight: "500px" }}>{t("loading")}</div>}>
+                    <Lottie
+                        lottieRef={lottieRef}
+                        className='mail-animation'
+                        style={{ height: "500px" }}
+                        animationData={devAnimation} 
+                        onDOMLoaded={handleLottieLoaded}
+                    />
+                </Suspense>
 
             </div>
         </section>

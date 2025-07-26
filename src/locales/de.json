@@ -1,4 +1,6 @@
 {
+  "loading": "lade...",
+
   "welcome": "Hallo👋, ich bin Abdallah", 
   "home": "Home",
   "projects": "Projekte", 
@@ -62,7 +64,8 @@
   "contact-desc": "Kontaktieren Sie mich gerne über dieses Formular oder direkt per E-Mail. Meine Adresse finden Sie in meinem Bewerbungsschreiben und Lebenslauf.",
   "email": "Email-Adresse:",
   "msg": "Ihre Nachricht:", 
-  "sendbtn": "Senden" 
+  "sendbtn": "Senden", 
+  "confirm": "Die Nachricht wurde erfolgreich gesendet" 
 
 
 }
