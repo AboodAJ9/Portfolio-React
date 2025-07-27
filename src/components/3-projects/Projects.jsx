@@ -1,7 +1,7 @@
 import './projects.css';
 import { useLayoutEffect, useRef, useState } from 'react';
 import { myProjects } from './myProjects';
-import { AnimatePresence, motion, transform } from 'framer-motion';
+import { AnimatePresence, motion } from 'framer-motion';
 import { useTranslation } from 'react-i18next';
 
 const Main = () => {

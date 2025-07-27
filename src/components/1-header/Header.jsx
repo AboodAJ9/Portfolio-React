@@ -10,7 +10,7 @@ const languages = [
 ]
 
 const Header = ({ sections, activeSection }) => {
-    const { t, i18n } = useTranslation();
+    const { i18n } = useTranslation();
     const [showModal, setShowModal] = useState(false);
     const [theme, setTheme] = useState(localStorage.getItem("theme") ?? 'dark');
     const current = languages.find((lang) => lang.code === i18n.language);

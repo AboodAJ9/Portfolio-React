@@ -1,7 +1,6 @@
-import { Suspense, lazy, useRef, useEffect } from 'react';
+import { Suspense, lazy } from 'react';
 import './contact.css';
 import { useForm, ValidationError } from '@formspree/react';
-// import Lottie from "lottie-react";
 import doneAnimation from "../../animations/done.json";
 import mailAnimation from "../../animations/email.json";
 import { useTranslation } from 'react-i18next';
@@ -33,8 +32,6 @@ const Contact = () => {
                             field="email"
                             errors={state.errors}
                         />
-
-
                     </div>
 
                     <div className="flex" style={{ marginTop: "25px" }}>
