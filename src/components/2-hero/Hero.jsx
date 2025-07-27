@@ -29,7 +29,7 @@ const Hero = ({ activeSection }) => {
                         initial={{ transform: "scale(0)" }}
                         animate={{ transform: "scale(1.1)" }}
                         transition={{ damping: 6, type: "spring", stiffness: 100 }}
-                        src="./ownImage_cycle.png" className="avatar" alt="private"
+                        src="./images/profile/ownImage_cycle.png" className="avatar" alt="private"
                         onContextMenu={(e) => e.preventDefault()}
                         draggable={false}
                         style={{ userSelect: "none", pointerEvents: "none" }} 
