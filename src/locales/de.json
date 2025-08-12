@@ -65,7 +65,11 @@
   "email": "Email-Adresse:",
   "msg": "Ihre Nachricht:", 
   "sendbtn": "Senden", 
-  "confirm": "Die Nachricht wurde erfolgreich gesendet" 
+  "confirm": "Die Nachricht wurde erfolgreich gesendet", 
+  "emailInvalid": "Die Email-Adresse ist ungültig", 
+  "emailRequired": "Die Email-Adresse ist erforderlich", 
+  "msgRequired": "Die Nachricht ist erforderlich"
+
 
 
 }

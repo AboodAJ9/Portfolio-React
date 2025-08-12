@@ -66,6 +66,9 @@
   "email": "Email adress:",
   "msg": "Your message:", 
   "sendbtn": "Send", 
-  "confirm": "Your message has been sent successfully." 
+  "confirm": "Your message has been sent successfully.",
+  "emailInvalid": "The email address is invalid.", 
+  "emailRequired": "The email address is required.", 
+  "msgRequired": "The message is required." 
 
 }
