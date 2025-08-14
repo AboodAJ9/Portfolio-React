@@ -169,7 +169,7 @@ section.contact-me form .label {
     }
 
     section.contact-me .submit {
-        width: 10vw;
+        padding: 0.75rem 1.5rem;
         align-self: center;
     }
 
