@@ -34,8 +34,8 @@ section.contact-me .sub-title {
 }
 
 /*pop up rueckmeldung*/
-.light section.contact-me .flex h1 {
-    /* color: var(--title);  */
+
+.light section.contact-me .success-msg {
     color: rgb(13, 114, 13);
 }
 
@@ -84,8 +84,7 @@ section.contact-me #message:focus,
 section.contact-me #email-error:focus,
 section.contact-me #message-error:focus,
 section.contact-me #email:hover,
-section.contact-me #message:hover
- {
+section.contact-me #message:hover {
     border: 1px solid rgb(45, 212, 191);
 }
 
@@ -94,8 +93,7 @@ section.contact-me #message:hover
 .light section.contact-me #email-error:focus,
 .light section.contact-me #message-error:focus,
 .light section.contact-me #email:hover,
-.light section.contact-me #message:hover
- {
+.light section.contact-me #message:hover {
     border: 1px solid rgb(64, 65, 65);
 }
 
@@ -104,13 +102,14 @@ section.contact-me #message-error {
     min-height: 9rem;
     resize: vertical;
 }
+
 section.contact-me #email-error,
 section.contact-me #message-error,
 .light section.contact-me #email-error,
-.light section.contact-me #message-error
-{
+.light section.contact-me #message-error {
     border: 1px solid red;
 }
+
 section.contact-me .submit {
     background-color: rgba(36, 37, 46, 1);
     padding: 0.75rem 2rem;
@@ -137,9 +136,10 @@ section.contact-me .animation {
 section.contact-me .mail-animation {
     height: 400px;
 }
+
 section.contact-me form .label {
     min-width: 120px;
-    margin-top: 10px; 
+    margin-top: 10px;
 }
 
 /* ==========================
@@ -155,7 +155,6 @@ section.contact-me form .label {
 
     section.contact-me form div.flex {
         flex-direction: column;
-        align-items: start;
     }
 
     section.contact-me #email,
@@ -173,16 +172,17 @@ section.contact-me form .label {
         align-self: center;
     }
 
-    section.contact-me .flex h1 {
-        flex-direction: column;
-        justify-content: center;
+    section.contact-me .success-msg {
+        font-size: 18px;
+        margin: 0.5rem;
+        text-align: center;
 
     }
 
     section.contact-me form .input {
         margin-left: 0;
-    }    
-    
+    }
+
     section.contact-me form .label {
         margin-top: 0;
     }
@@ -200,4 +200,3 @@ section.contact-me form .label {
         height: 400px; 
     }
 } */
-

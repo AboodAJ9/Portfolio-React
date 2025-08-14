@@ -56,7 +56,7 @@ const Contact = () => {
                                 type='email'
                                 name="email"
                                 autoComplete='off'
-                                id = {`email${errors.email ? '-error' : ''}`}
+                                id={`email${errors.email ? '-error' : ''}`}
                                 value={values.email}
                                 onChange={(e) => setValues({ ...values, email: e.target.value })}
                             />
@@ -74,7 +74,7 @@ const Contact = () => {
                         <div className='input'>
                             <textarea
                                 name="message"
-                                id = {`message${errors.message ? '-error' : ''}`}
+                                id={`message${errors.message ? '-error' : ''}`}
                                 value={values.message}
                                 onChange={(e) => setValues({ ...values, message: e.target.value })}
                             >
@@ -82,7 +82,7 @@ const Contact = () => {
                             </textarea>
                             <div style={{ minHeight: "30px" }}>
                                 {errors.message && (
-                                    <p style={{ color: "red"}}>{errors.message}</p>
+                                    <p style={{ color: "red" }}>{errors.message}</p>
                                 )}
                             </div>
                         </div>
@@ -90,12 +90,9 @@ const Contact = () => {
                     <button className='submit' type="submit" disabled={state.submitting}>
                         {t("sendbtn")}
                     </button>
-                    {/* {state.succeeded && (
-                        <h1 className='flex' style={{ fontSize: "18px", margin: "0.5rem", textAlign: "center" }}>
-                            <Lottie className='lottie' loop={false} style={{ height: 37, paddingRight: "10px" }} animationData={doneAnimation} />
-                            {t("confirm")}</h1>
-                    )} */}
+
                     {state.succeeded && <SuccessMessage />}
+
                 </form>
                 <div className="animation">
                     <Suspense fallback={
